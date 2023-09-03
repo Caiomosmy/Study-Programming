@@ -1,6 +1,14 @@
-# Front-end 
-HTML, CSS, JAVASCRIPT, NODE.JS - Por eu ser desenvolvedor full Stack em Back-end tenho conhecimentos em Front-end
+# Stacks
+Python, JavaScript, PHP, R
 
+# Frameworks
+Django, NodeJS, Express.JS, Laravel 
 
-# Back-End
-Python, PHP, R 
+# APIs
+Restful, GraphQL
+
+# Banco de Dados
+MySQL, NoSQL
+
+# DevOps 
+Git, Dockers
