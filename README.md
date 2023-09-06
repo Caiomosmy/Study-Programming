@@ -2,7 +2,7 @@
 Python, JavaScript, PHP, R
 
 # Frameworks
-Django, NodeJS, Express.JS, Laravel 
+Django, NodeJS, Express.JS, Nest.JS 
 
 # APIs
 Restful, GraphQL
@@ -11,5 +11,4 @@ Restful, GraphQL
 MySQL, NoSQL
 
 # DevOps 
-Git, Dockers
-
+Git, AWS
