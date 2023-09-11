@@ -9,3 +9,5 @@ pip install django
 Criar um Novo Projeto Django: Use o comando django-admin ou manage.py para criar um novo projeto Django. Por exemplo:
 
 django-admin startproject nomedoseuprojeto
+
+Configurar o Banco de Dados: Abra o arquivo settings.py e configure o banco de dados que você deseja usar. O Django suporta vários bancos de dados, como SQLite, PostgreSQL, MySQL, entre outros.
