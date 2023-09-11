@@ -11,4 +11,4 @@ Restful, GraphQL
 MySQL, NoSQL
 
 # DevOps 
-Git, AWS
+Git
