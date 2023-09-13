@@ -34,3 +34,11 @@ human(id: "1000") {
     height
   }
 }
+{
+  "data": {
+    "human": {
+      "name": "Luke Skywalker",
+      "height": 1.72
+    }
+  }
+}
