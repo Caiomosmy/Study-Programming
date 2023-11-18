@@ -1,3 +1,6 @@
 /*ESTUDOS DE TYPESCRIPT*/
 
 /*INTRODUCÃO*/
+
+/**/
+
