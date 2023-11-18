@@ -2,6 +2,8 @@
 
 /*INTRODUCÃO*/
 
-/**/
+/*TYPESCRIPT TYPES*/
 
-/**/
+/*TYPE INFERENCE*/
+
+/*TYPE COMPARIBILITY*/
