@@ -4,3 +4,6 @@
 /*FUNÇÕES*/
 
 
+/*DATA TYPES*/
+
+
