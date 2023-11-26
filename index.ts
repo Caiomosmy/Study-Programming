@@ -12,8 +12,15 @@ Compatibilidade Retrovertida
 
 /*TYPESCRIPT TYPES*/
 
-/*TYPE INFERENCE*/
+/*TYPE INFERENCE
+A inferência de tipo no TypeScript refere-se ao processo de determinar automaticamente o tipo de uma variável com base no valor atribuído a ela. 
+Isso permite que você escreva um código mais conciso e fácil de entender, pois o compilador TypeScript pode deduzir os tipos de variáveis sem 
+que você precise especificá-las explicitamente. Aqui está um exemplo de inferência de tipo em TypeScript:*//
 
+let name = 'John Doe';
+
+/**Neste exemplo, o compilador TypeScript infere automaticamente que o tipo da variável de nome é string. Isso significa que você pode usar a variável 
+  name como qualquer outra string em seu código, e o compilador TypeScript garantirá que você execute quaisquer operações inválidas nele.*/
 /*TYPE COMPARIBILITY*/
 
 /*COMBINING TYPES*/
