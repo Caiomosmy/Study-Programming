@@ -25,4 +25,20 @@ let name = 'John Doe';
 
 /*COMBINING TYPES*/
 
+/*TypeScript usa tipagem estrutural para determinar a compatibilidade de tipo. Isso significa que dois tipos são considerados compatíveis se possuírem a mesma estrutura, independentemente de seus nomes.
+
+Aqui está um exemplo de compatibilidade de tipos no TypeScript:*/
+
+interface Point {
+  x: number;
+  y: number;
+}
+
+let p1: Point = { x: 10, y: 20 };
+let p2: { x: number; y: number } = p1;
+
+console.log(p2.x); // Output: 10
+
+/*Neste exemplo, p1possui o tipo Point, enquanto p2possui o tipo { x: number; y: number }. Apesar dos dois tipos terem nomes diferentes, eles são considerados compatíveis por possuírem a mesma estrutura. Isso significa que você pode atribuir um valor de tipo Pointa uma variável de tipo { x: number; y: number }, como fazemos com p1e p2neste exemplo.*/
+
 /*TYPE GUARDS / NARROWING*/
