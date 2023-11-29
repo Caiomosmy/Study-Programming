@@ -63,3 +63,4 @@ const dog = new Animal('Dog');
 dog.makeSound(); // Output: Dog is making a sound
 
 
+Neste exemplo, a Animalclasse possui um campo de nome, um construtor que define o valor do namecampo e um makeSoundmétodo. Uma instância da Animalclasse pode ser criada usando a newpalavra-chave e seus métodos e propriedades podem ser acessados usando a notação de ponto.
