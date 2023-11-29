@@ -48,4 +48,18 @@ As classes em TypeScript são um modelo para a criação de objetos (instâncias
 
 Uma classe em TypeScript é definida usando a palavra-chave class, seguida pelo nome da classe. A definição de classe pode incluir campos (também conhecidos como propriedades ou atributos), métodos (funções) e um construtor.*/
 
+class Animal {
+  name: string;
+  constructor(name: string) {
+    this.name = name;
+  }
+
+  makeSound(): void {
+    console.log(`${this.name} is making a sound`);
+  }
+}
+
+const dog = new Animal('Dog');
+dog.makeSound(); // Output: Dog is making a sound
+
 
