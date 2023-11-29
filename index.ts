@@ -42,3 +42,10 @@ console.log(p2.x); // Output: 10
 /*Neste exemplo, p1possui o tipo Point, enquanto p2possui o tipo { x: number; y: number }. Apesar dos dois tipos terem nomes diferentes, eles são considerados compatíveis por possuírem a mesma estrutura. Isso significa que você pode atribuir um valor de tipo Pointa uma variável de tipo { x: number; y: number }, como fazemos com p1e p2neste exemplo.*/
 
 /*TYPE GUARDS / NARROWING*/
+
+/*CLASSES
+As classes em TypeScript são um modelo para a criação de objetos (instâncias de uma classe), fornecendo uma maneira de estruturar objetos e encapsular dados e comportamento. As classes em TypeScript têm uma sintaxe semelhante às classes em outras linguagens de programação orientadas a objetos, como Java e C#.
+
+Uma classe em TypeScript é definida usando a palavra-chave class, seguida pelo nome da classe. A definição de classe pode incluir campos (também conhecidos como propriedades ou atributos), métodos (funções) e um construtor.*/
+
+
