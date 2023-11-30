@@ -68,3 +68,30 @@ dog.makeSound(); // Output: Dog is making a sound
 /*DECORADORES*/
 /*Decoradores são um recurso do TypeScript que permite modificar o comportamento de uma classe, propriedade, método ou parâmetro. Eles são uma maneira de adicionar funcionalidades adicionais ao código existente e podem ser usados para uma ampla gama de tarefas, incluindo registro em log, otimização de desempenho e validação.
 Aqui está um exemplo de como você pode usar um decorador em TypeScript:*/
+
+function log(
+  target: Object,
+  propertyKey: string | symbol,
+  descriptor: PropertyDescriptor
+) {
+  const originalMethod = descriptor.value;
+
+  descriptor.value = function (...args: any[]) {
+    console.log(`Calling ${propertyKey} with arguments: ${args}`);
+    return originalMethod.apply(this, args);
+  };
+
+  return descriptor;
+}
+
+class Calculator {
+  @log
+  add(a: number, b: number): number {
+    return a + b;
+  }
+}
+
+const calculator = new Calculator();
+calculator.add(1, 2);
+// Output: Calling add with arguments: 1,2
+// Output: 3
