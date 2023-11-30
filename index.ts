@@ -95,3 +95,5 @@ const calculator = new Calculator();
 calculator.add(1, 2);
 // Output: Calling add with arguments: 1,2
 // Output: 3
+
+/*Neste exemplo, usamos o @log decorador para modificar o comportamento do add método no Calculator classe. O log decorator registra os argumentos passados para o método antes de chamar o método original. Isso nos permite ver quais argumentos estão sendo passados para o método, sem ter que modificar o código methodirates.*/
