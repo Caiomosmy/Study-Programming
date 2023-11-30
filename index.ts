@@ -63,4 +63,8 @@ const dog = new Animal('Dog');
 dog.makeSound(); // Output: Dog is making a sound
 
 
-Neste exemplo, a Animalclasse possui um campo de nome, um construtor que define o valor do namecampo e um makeSoundmétodo. Uma instância da Animalclasse pode ser criada usando a newpalavra-chave e seus métodos e propriedades podem ser acessados usando a notação de ponto.
+/*Neste exemplo, a Animalclasse possui um campo de nome, um construtor que define o valor do namecampo e um makeSoundmétodo. Uma instância da Animalclasse pode ser criada usando a newpalavra-chave e seus métodos e propriedades podem ser acessados usando a notação de ponto.*/
+
+/*DECORADORES*/
+/*Decoradores são um recurso do TypeScript que permite modificar o comportamento de uma classe, propriedade, método ou parâmetro. Eles são uma maneira de adicionar funcionalidades adicionais ao código existente e podem ser usados para uma ampla gama de tarefas, incluindo registro em log, otimização de desempenho e validação.
+Aqui está um exemplo de como você pode usar um decorador em TypeScript:*/
