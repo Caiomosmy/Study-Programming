@@ -117,4 +117,4 @@ function loggingIdentity<T extends Lengthwise>(arg: T): T {
 loggingIdentity(3); // Error, number doesn't have a .length property
 loggingIdentity({ length: 10, value: 3 }); // OK
 
-Neste exemplo, a Lengthwiseinterface define uma lengthpropriedade. A loggingIdentityfunção usa um parâmetro de tipo genérico Tque é restringido pela Lengthwiseinterface, o que significa que o parâmetro de tipo deve estender ou implementar a Lengthwiseinterface. Esta restrição garante que a propriedade length esteja disponível no argumento passado para a loggingIdentityfunção.
+/*Neste exemplo, a Lengthwiseinterface define uma lengthpropriedade. A loggingIdentityfunção usa um parâmetro de tipo genérico Tque é restringido pela Lengthwiseinterface, o que significa que o parâmetro de tipo deve estender ou implementar a Lengthwiseinterface. Esta restrição garante que a propriedade length esteja disponível no argumento passado para a loggingIdentityfunção.*/
