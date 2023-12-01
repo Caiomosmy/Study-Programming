@@ -102,3 +102,17 @@ calculator.add(1, 2);
 As restrições genéricas no TypeScript permitem especificar os requisitos para os parâmetros de tipo usados em um tipo genérico. Essas restrições garantem que o parâmetro de tipo usado em um tipo genérico atenda a determinados requisitos.
 
 As restrições são especificadas usando a extendspalavra-chave, seguida pelo tipo que o parâmetro de tipo deve estender ou implementar.*/
+
+interface Lengthwise {
+  length: number;
+}
+
+function loggingIdentity<T extends Lengthwise>(arg: T): T {
+  // Now we know it has a .length property, so no more error
+  console.log(arg.length);
+
+  return arg;
+}
+
+loggingIdentity(3); // Error, number doesn't have a .length property
+loggingIdentity({ length: 10, value: 3 }); // OK
