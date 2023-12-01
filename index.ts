@@ -101,4 +101,4 @@ calculator.add(1, 2);
 /* --Restrições genéricas
 As restrições genéricas no TypeScript permitem especificar os requisitos para os parâmetros de tipo usados em um tipo genérico. Essas restrições garantem que o parâmetro de tipo usado em um tipo genérico atenda a determinados requisitos.
 
-As restrições são especificadas usando a extendspalavra-chave, seguida pelo tipo que o parâmetro de tipo deve estender ou implementar. /*
+As restrições são especificadas usando a extendspalavra-chave, seguida pelo tipo que o parâmetro de tipo deve estender ou implementar.*/
