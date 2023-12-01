@@ -97,3 +97,8 @@ calculator.add(1, 2);
 // Output: 3
 
 /*Neste exemplo, usamos o @log decorador para modificar o comportamento do add método no Calculator classe. O log decorator registra os argumentos passados para o método antes de chamar o método original. Isso nos permite ver quais argumentos estão sendo passados para o método, sem ter que modificar o código methodirates.*/
+
+/*---Restrições genéricas
+As restrições genéricas no TypeScript permitem especificar os requisitos para os parâmetros de tipo usados em um tipo genérico. Essas restrições garantem que o parâmetro de tipo usado em um tipo genérico atenda a determinados requisitos.
+
+As restrições são especificadas usando a extendspalavra-chave, seguida pelo tipo que o parâmetro de tipo deve estender ou implementar./*
