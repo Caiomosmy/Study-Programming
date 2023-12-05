@@ -62,7 +62,7 @@ class Animal {
 const dog = new Animal('Dog');
 dog.makeSound(); // Output: Dog is making a sound
 
-/**/
+/*PARAMETROS DE CONSTRUÇÃO*/
 /*No TypeScript, os parâmetros do construtor podem ser declarados com modificadores de acesso ( por exemplo. public, private, protected) e / ou anotações de tipo. Os parâmetros são atribuídos automaticamente a propriedades com o mesmo nome dentro do construtor e podem ser acessados dentro da classe. Por exemplo:*/
 
 
