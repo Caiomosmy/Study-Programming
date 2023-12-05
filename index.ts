@@ -68,6 +68,8 @@ class Example {
   constructor(private name: string, public age: number) {}
 }
 
+/*Neste exemplo, o construtor tem dois parâmetros: nome e idade. nome tem um modificador de acesso privado, por isso só pode ser acessado dentro da classe Exemplo. age tem um modificador de acesso público, por isso pode ser acessado de fora da classe também.*/
+
 /*Neste exemplo, a Animalclasse possui um campo de nome, um construtor que define o valor do namecampo e um makeSoundmétodo. Uma instância da Animalclasse pode ser criada usando a newpalavra-chave e seus métodos e propriedades podem ser acessados usando a notação de ponto.*/
 
 /*DECORADORES*/
