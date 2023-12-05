@@ -64,7 +64,9 @@ dog.makeSound(); // Output: Dog is making a sound
 
 /*PARAMETROS DE CONSTRUÇÃO*/
 /*No TypeScript, os parâmetros do construtor podem ser declarados com modificadores de acesso ( por exemplo. public, private, protected) e / ou anotações de tipo. Os parâmetros são atribuídos automaticamente a propriedades com o mesmo nome dentro do construtor e podem ser acessados dentro da classe. Por exemplo:*/
-
+class Example {
+  constructor(private name: string, public age: number) {}
+}
 
 /*Neste exemplo, a Animalclasse possui um campo de nome, um construtor que define o valor do namecampo e um makeSoundmétodo. Uma instância da Animalclasse pode ser criada usando a newpalavra-chave e seus métodos e propriedades podem ser acessados usando a notação de ponto.*/
 
