@@ -62,6 +62,9 @@ class Animal {
 const dog = new Animal('Dog');
 dog.makeSound(); // Output: Dog is making a sound
 
+/**/
+/*No TypeScript, os parâmetros do construtor podem ser declarados com modificadores de acesso ( por exemplo. public, private, protected) e / ou anotações de tipo. Os parâmetros são atribuídos automaticamente a propriedades com o mesmo nome dentro do construtor e podem ser acessados dentro da classe. Por exemplo:*/
+
 
 /*Neste exemplo, a Animalclasse possui um campo de nome, um construtor que define o valor do namecampo e um makeSoundmétodo. Uma instância da Animalclasse pode ser criada usando a newpalavra-chave e seus métodos e propriedades podem ser acessados usando a notação de ponto.*/
 
