@@ -126,6 +126,7 @@ loggingIdentity({ length: 10, value: 3 }); // OK
 
 /*Neste exemplo, a Lengthwiseinterface define uma lengthpropriedade. A loggingIdentityfunção usa um parâmetro de tipo genérico Tque é restringido pela Lengthwiseinterface, o que significa que o parâmetro de tipo deve estender ou implementar a Lengthwiseinterface. Esta restrição garante que a propriedade length esteja disponível no argumento passado para a loggingIdentityfunção.*/
 
+/*TIPOS DE UTILITÁRIOS*/
 /*O TypeScript fornece vários tipos de utilitários que podem ser usados para manipular e transformar tipos existentes. Aqui estão alguns dos mais comuns:
 
 Partial: torna todas as propriedades de um tipo opcional.
@@ -135,3 +136,5 @@ Omit: permite omitir propriedades específicas de um tipo.
 Exclude: cria um tipo que é a diferença definida de A e B.
 ..e mais.
 Saiba mais nos seguintes links:*/
+
+/**/
