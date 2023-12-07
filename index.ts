@@ -65,7 +65,195 @@ console.log(p2.x); // Output: 10
 Nomes diferentes, eles são considerados compatíveis por possuírem a mesma estrutura. Isso significa que você pode atribuir 
 um valor de tipo Pointa uma variável de tipo { x: number; y: number }, como fazemos com p1e p2neste exemplo.*/
 
+    /*--- UNION TYPES*/
+      /*Tipos de União no TypeScript permitem que você especifique vários tipos possíveis para uma única variável 
+      ou parâmetro. Um tipo de união é escrito como uma barra vertical | lista separada de tipos.
+      Por exemplo, considere uma função que usa uma string ou um número como argumento:*/
+
+            function combine(input1: string | number, input2: string | number) {
+        return input1 + input2;
+    }
+
+    /*--- INTERSECTION TYPES*/
+    /*Um tipo de interseção cria um novo tipo combinando vários tipos existentes. O novo tipo tem todas as 
+    características dos tipos existentes. Para combinar tipos, você usa o & operador da seguinte forma:*/
+    type typeAB = typeA & typeB;
+
+    /*O typeAB terá todas as propriedades de typeA e typeB. Observe que o tipo de união usa o | operador 
+    que define uma variável que pode conter um valor de typeA ou typeB*/
+
+    /*--- TYPE ALIASES*/
+    /*Um Alias de Tipo no TypeScript permite que você crie um novo nome para um tipo. Aqui está um exemplo:*/
+    type Name = string;
+    type Age = number;
+    type User = { name: Name; age: Age };
+
+    const user: User = { name: 'John', age: 30 };
+
+    /*No exemplo acima, Name e Age são aliases de tipo para string e number respectivamente. 
+    E User é um alias de tipo para um objeto com propriedades name tipo Name e age tipo Age.*/
+
+    /*--- KEYOF OPERATOR*/
+    /*O keyof operador em TypeScript é usado para obter a união de chaves de um tipo de objeto. Aqui está um 
+    exemplo de como ele pode ser usado:*/
+
+      interface User {
+    name: string;
+    age: number;
+    location: string;
+  }
+
+type UserKeys = keyof User; // "name" | "age" | "location"
+const key: UserKeys = 'name';
+
+/*Neste exemplo, UserKeys é um tipo que representa a união de chaves do User interface, que é 
+  "name" | "age" | "location". E uma constante chamada key com o tipo UserKeys é declarado com o valor "name".*/
+
 /*TYPE GUARDS / NARROWING*/
+/*Protetores de tipo são uma maneira de restringir o tipo de uma variável. Isso é útil quando você deseja fazer 
+algo diferente, dependendo do tipo de uma variável.*/
+
+    /*--- Typeof*/
+    /*O typeof operador é usado para verificar o tipo de uma variável. Ele retorna um valor de string 
+    representando o tipo da variável*/
+
+    let value: string | number = 'hello';
+
+    if (typeof value === 'string') {
+      console.log('value is a string');
+    } else {
+    console.log('value is a number');
+    }
+
+    /*--- instanceof*/
+    /*O instanceof operador é uma maneira de restringir o tipo de uma variável. Ele é usado para verificar 
+    se um objeto é uma instância de uma classe.*/
+
+    class Bird {
+  fly() {
+    console.log('flying...');
+  }
+  layEggs() {
+    console.log('laying eggs...');
+  }
+}
+
+const pet = new Bird();
+
+// instanceof
+if (pet instanceof Bird) {
+  pet.fly();
+} else {
+  console.log('pet is not a bird');
+}
+    
+    /*-- Equality*/
+    /*O TypeScript também usa instruções de switch e verificações de igualdade, como ===, !==, ==, e != 
+    para tipos estreitos. Por exemplo:*/
+
+    function example(x: string | number, y: string | boolean) {
+  if (x === y) {
+    // We can now call any 'string' method on 'x' or 'y'.
+    x.toUpperCase();
+    y.toLowerCase();
+  } else {
+    console.log(x);
+    console.log(y);
+  }
+}
+    /*Quando verificamos isso x e y ambos são iguais no exemplo acima, TypeScript sabia que seus tipos também 
+    tinham que ser iguais. Uma vez que string é o único tipo comum que ambos x e y poderia assumir, 
+    TypeScript sabe disso x e y deve ser uma string no primeiro ramo.*/
+
+    /*-- Trthiness*/
+    /*A veracidade pode não ser uma palavra que você encontra no dicionário, mas é algo que você ouve em JavaScript.
+    Em JavaScript, podemos usar qualquer expressão em condicionais, &&s, s, ||s, s, if declarações, negações booleanas (!),
+    e mais. Por exemplo, se as instruções não esperarem que sua condição tenha sempre o tipo booleano.*/
+    function getUsersOnlineMessage(numUsersOnline: number) {
+  if (numUsersOnline) {
+    return `There are ${numUsersOnline} online now!`;
+  }
+
+  return "Nobody's here. :(";
+}
+
+    /*-- Type Predicates*/
+    /*Predicados de tipo são funções que retornam um valor booleano. Eles são usados para restringir o tipo de uma variável. 
+    Predicados de tipo são usados em guardas de tipo.*/
+
+    function isString(value: unknown): value is string {
+  return typeof value === 'string';
+}
+
+function example(x: unknown) {
+  if (isString(x)) {
+    // We can now call any 'string' method on 'x'.
+    x.toUpperCase();
+  } else {
+    console.log(x);
+  }
+}
+
+/*TYPESCRIPT FUNCTIONS*/
+/*As funções são um bloco de construção central no TypeScript. As funções permitem que você envolva um pedaço de código e 
+reutilize-o várias vezes. As funções no TypeScript podem ser declaradas usando sintaxe de declaração de função ou sintaxe 
+de expressão de função.*/
+
+/*Sintaxe de Declaração de Função:*/
+
+function name(param1: type1, param2: type2, ...): returnType {
+  return value;
+}
+
+/*Sintaxe de Expressão de Função:*/
+let name = function(param1: type1, param2: type2, ...): returnType {
+  return value;
+};
+
+    /*--- Typing Functions */
+    /*No TypeScript, as funções podem ser digitadas de algumas maneiras diferentes para indicar os parâmetros de 
+    entrada e o tipo de retorno da função. 
+    
+    Declaração de função com tipos:*/
+    function add(a: number, b: number): number {
+  return a + b;
+}
+    /*Função de seta com tipos:*/
+    const multiply = (a: number, b: number): number => {
+  return a * b;
+};
+    /*Tipo de função:*/
+    let divide: (a: number, b: number) => number;
+
+divide = (a, b) => {
+  return a / b;
+};
+    
+    /*--- Function Overloading */
+    /*Sobrecarga de função no TypeScript permite que várias funções com o mesmo nome, mas com parâmetros diferentes 
+    sejam definidas. A função correta a ser chamada é determinada com base no número, tipo e ordem dos argumentos 
+    passados para a função em tempo de execução.*/
+
+    function add(a: number, b: number): number;
+function add(a: string, b: string): string;
+
+function add(a: any, b: any): any {
+  return a + b;
+}
+
+console.log(add(1, 2)); // 3
+console.log(add('Hello', ' World')); // "Hello World"
+
+
+/*TYPESCRIPT INTERFACES*/
+
+
+
+
+    /*--*/
+    /*--*/
+    /*--*/
+    /*--*/
 
 
 
@@ -91,6 +279,14 @@ class Animal {
 const dog = new Animal('Dog');
 dog.makeSound(); // Output: Dog is making a sound
 
+
+      /*---Constructor Params*/
+      /*---Constructor Overloadding*/
+      /*---Access Modifiers*/
+      /*---Abstract Classes*/
+      /*---Inheritance vs Polymorphism*/
+      /*---Method Overrinding*/
+      
 /*PARAMETROS DE CONSTRUÇÃO*/
 /*No TypeScript, os parâmetros do construtor podem ser declarados com modificadores de acesso ( por exemplo. 
 public, private, protected) e / ou anotações de tipo. Os parâmetros são atribuídos automaticamente a propriedades 
