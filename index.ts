@@ -591,12 +591,34 @@ calculator.add(1, 2);
 // Output: Calling add with arguments: 1,2
 // Output: 3
 
-/*Neste exemplo, usamos o @log decorador para modificar o comportamento do add método no Calculator classe. O log decorator registra os argumentos passados para o método antes de chamar o método original. Isso nos permite ver quais argumentos estão sendo passados para o método, sem ter que modificar o código methodirates.*/
+/*Neste exemplo, usamos o @log decorador para modificar o comportamento do add método no Calculator classe. O log 
+decorator registra os argumentos passados para o método antes de chamar o método original. Isso nos permite ver 
+quais argumentos estão sendo passados para o método, sem ter que modificar o código methodirates.*/
+
+/*GENÉRICOS*/
+  /*Os genéricos no TypeScript são uma maneira de escrever código que pode funcionar com vários tipos de dados, 
+  em vez de ser limitado a um único tipo de dados. Os genéricos permitem que você escreva funções, classes e 
+  interfaces que adotam um ou mais parâmetros de tipo, que atuam como espaços reservados para os tipos de dados 
+  reais que serão usados quando a função, classe, ou interface é usada.
+
+  Por exemplo, o seguinte é uma função genérica que pega um único argumento de qualquer tipo de dados e retorna o 
+  mesmo tipo de dados:*/
+  function identity<T>(arg: T): T {
+  return arg;
+}
+
+let output = identity<string>('Hello'); // type of output will be 'string'
+
+  /*Neste exemplo, o identity função pega um único argumento de qualquer tipo de dados e retorna o mesmo tipo de dados. 
+  O tipo de dados real é especificado quando a função é chamada usando <string> antes do argumento "Hello".*/
 
 /* --Restrições genéricas
-As restrições genéricas no TypeScript permitem especificar os requisitos para os parâmetros de tipo usados em um tipo genérico. Essas restrições garantem que o parâmetro de tipo usado em um tipo genérico atenda a determinados requisitos.
+As restrições genéricas no TypeScript permitem especificar os requisitos para os parâmetros de tipo usados em um 
+tipo genérico. Essas restrições garantem que o parâmetro de tipo usado em um tipo genérico atenda a determinados 
+requisitos.
 
-As restrições são especificadas usando a extendspalavra-chave, seguida pelo tipo que o parâmetro de tipo deve estender ou implementar.*/
+As restrições são especificadas usando a extendspalavra-chave, seguida pelo tipo que o parâmetro de tipo deve 
+estender ou implementar.*/
 
 interface Lengthwise {
   length: number;
@@ -612,10 +634,45 @@ function loggingIdentity<T extends Lengthwise>(arg: T): T {
 loggingIdentity(3); // Error, number doesn't have a .length property
 loggingIdentity({ length: 10, value: 3 }); // OK
 
-/*Neste exemplo, a Lengthwiseinterface define uma lengthpropriedade. A loggingIdentityfunção usa um parâmetro de tipo genérico Tque é restringido pela Lengthwiseinterface, o que significa que o parâmetro de tipo deve estender ou implementar a Lengthwiseinterface. Esta restrição garante que a propriedade length esteja disponível no argumento passado para a loggingIdentityfunção.*/
+/*Neste exemplo, a Lengthwiseinterface define uma lengthpropriedade. A loggingIdentityfunção usa um parâmetro de tipo 
+genérico Tque é restringido pela Lengthwiseinterface, o que significa que o parâmetro de tipo deve estender ou 
+implementar a Lengthwiseinterface. Esta restrição garante que a propriedade length esteja disponível no argumento 
+passado para a loggingIdentityfunção.*/
+
+    /*--- TIPOS GENÉRICOS*/
+    /*Os tipos genéricos no TypeScript permitem que você escreva objetos, funções e classes que funcionam com vários 
+    tipos de dados, em vez de serem limitados a um único tipo de dados. Um tipo genérico é definido usando colchetes 
+    angulares <T> e pode ser usado como um espaço reservado para um tipo de dados específico. O tipo de dados real é 
+    especificado quando a função ou classe é usada.
+
+    Por exemplo, o seguinte é uma função genérica que pega um único argumento de qualquer tipo de dados e retorna o 
+    mesmo tipo de dados:*/
+    function identity<T>(arg: T): T {
+  return arg;
+}
+
+let output = identity<string>('Hello'); // type of output will be 'string'
+
+    /*Neste exemplo, o identity função pega um único argumento de qualquer tipo de dados e retorna o mesmo tipo de 
+    dados. O tipo de dados real é especificado quando a função é chamada usando <string> antes do argumento Hello.
+
+    Os genéricos também podem ser usados com classes, interfaces e tipos de objetos, permitindo que eles trabalhem 
+    com vários tipos de dados também. Por exemplo:*/
+    class GenericNumber<T> {
+  zeroValue: T;
+  add: (x: T, y: T) => T;
+}
+
+let myGenericNumber = new GenericNumber<number>();
+myGenericNumber.zeroValue = 0;
+myGenericNumber.add = function (x, y) {
+  return x + y;
+};
+    
 
 /*TIPOS DE UTILITÁRIOS*/
-/*O TypeScript fornece vários tipos de utilitários que podem ser usados para manipular e transformar tipos existentes. Aqui estão alguns dos mais comuns:
+/*O TypeScript fornece vários tipos de utilitários que podem ser usados para manipular e transformar tipos existentes. 
+Aqui estão alguns dos mais comuns:
 
 Partial: torna todas as propriedades de um tipo opcional.
 Readonly: torna todas as propriedades de um tipo somente leitura.
