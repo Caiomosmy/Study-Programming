@@ -246,16 +246,123 @@ console.log(add('Hello', ' World')); // "Hello World"
 
 
 /*TYPESCRIPT INTERFACES*/
+/*Interfaces no TypeScript fornecem uma maneira de definir um contrato para um tipo, que inclui um conjunto de 
+propriedades, métodos e eventos. Itilits usado para impor uma estrutura para um objeto, classe ou argumento de 
+função. As interfaces não são transpiladas para JavaScript e são usadas apenas pelo TypeScript em tempo de 
+compilação para fins de verificação de tipo.
+
+Aqui está um exemplo de definição e uso de uma interface no TypeScript:*/
+
+interface User {
+  name: string;
+  age: number;
+}
+
+const user: User = {
+  name: 'John Doe',
+  age: 30,
+};
+
+/*Neste exemplo, o User a interface define a estrutura do user objeto com duas propriedades, name e age. 
+O objeto é então digitado como Usuário usando uma declaração de tipo: User.*/
 
 
+    /*--Types vs Interfaces*/
+    /*No TypeScript, ambos os tipos e interfaces podem ser usados para definir a estrutura de objetos e 
+    impor verificações de tipo. No entanto, existem algumas diferenças entre os dois. Tipos são usados 
+    para criar um novo tipo nomeado com base em um tipo existente ou para combinar tipos existentes em
+    um novo tipo. Eles podem ser criados usando a palavra-chave type. Por exemplo:*/
 
+    type Person = {
+  name: string;
+  age: number;
+};
 
-    /*--*/
-    /*--*/
-    /*--*/
-    /*--*/
+const person: Person = {
+  name: 'John Doe',
+  age: 30,
+};
+    
+    /*Interfaces, por outro lado, são usadas para descrever a estrutura de objetos e classes. 
+    Eles podem ser criados usando a palavra-chave interface. Por exemplo:*/
 
+    interface Person {
+  name: string;
+  age: number;
+}
 
+const person: Person = {
+  name: 'John Doe',
+  age: 30,
+};
+    
+    /*--Extending Interfaces*/
+    /*No TypeScript, você pode estender uma interface criando uma nova interface que herda da 
+    interface original usando a palavra-chave “extends”. A nova interface pode incluir propriedades 
+    adicionais, métodos ou redefinir os membros da interface original.*/
+
+    interface Shape {
+  width: number;
+  height: number;
+}
+
+interface Square extends Shape {
+  sideLength: number;
+}
+
+let square: Square = {
+  width: 10,
+  height: 10,
+  sideLength: 10,
+};
+
+    /*Neste exemplo, o Square interface estende o Shape interface e adiciona uma propriedade adicional sideLength. 
+    Uma variável do tipo Square deve ter todas as propriedades definidas em ambos Shape e Square interfaces.*/
+      
+    /*--Interface Declaration*/
+    /*Um interface em TypeScript é um blueprint para a criação de objetos com estrutura específica. Um interface 
+    define um conjunto de propriedades, métodos e eventos que uma classe ou objeto deve implementar. A interface 
+    é um contrato entre objetos e classes e pode ser usada para impor uma estrutura específica para objetos em 
+    seu código.
+
+    Aqui está um exemplo de uma declaração de interface em TypeScript:*/
+
+    interface Person {
+  firstName: string;
+  lastName: string;
+  age?: number;
+
+  getFullName(): string;
+}
+ /*Neste exemplo, a interface Person define quatro propriedades: firstName, lastName, age, e um método getFullName().
+  A propriedade de idade é opcional, indicada pelo ? símbolo. Qualquer classe ou objeto que implementa o Person a 
+  interface deve ter essas propriedades e método./*
+
+Saiba mais nos seguintes links:
+  
+    /*-- Hybrid Types*/
+    /*Em TypeScript, um tipo híbrido é um tipo que combina vários tipos em um único tipo. O tipo resultante é considerado 
+    uma união desses tipos. Isso permite que você especifique que um valor pode ter vários tipos, em vez de apenas um.
+
+    Por exemplo, você pode criar um tipo híbrido que pode aceitar uma string ou um número:*/
+
+    type StringOrNumber = string | number;
+
+    /*Você também pode usar tipos híbridos para criar tipos mais complexos que podem representar uma combinação de vários 
+    tipos diferentes de valores. Por exemplo:*/
+
+    type Education = {
+  degree: string;
+  school: string;
+  year: number;
+};
+
+type User = {
+  name: string;
+  age: number;
+  email: string;
+  education: Education;
+};
 
 /*CLASSES
 As classes em TypeScript são um modelo para a criação de objetos (instâncias de uma classe), fornecendo uma maneira de 
@@ -279,13 +386,139 @@ class Animal {
 const dog = new Animal('Dog');
 dog.makeSound(); // Output: Dog is making a sound
 
+/*Neste exemplo, o Animal classe tem um campo de nome, um construtor que define o valor do name campo, e um makeSound método.
+Uma instância do Animal a classe pode ser criada usando o new palavra-chave, e seus métodos e propriedades podem ser 
+acessados usando notação de ponto.*/
 
       /*---Constructor Params*/
+      /*No TypeScript, os parâmetros do construtor podem ser declarados com modificadores de acesso (por exemplo. public, 
+      private, protected) e/ou digite anotações. Os parâmetros são atribuídos automaticamente às propriedades do mesmo 
+      nome dentro do construtor, e podem ser acessados dentro da classe. Por exemplo:*/
+      class Example {
+  constructor(private name: string, public age: number) {}
+}
+      /*Neste exemplo, o construtor tem dois parâmetros: nome e idade. nome tem um modificador de acesso privado, por isso 
+      só pode ser acessado dentro da classe Exemplo. age tem um modificador de acesso público, por isso pode ser acessado 
+      de fora da classe também.*/
+
       /*---Constructor Overloadding*/
+      /*No TypeScript, você pode obter sobrecarga de construtor usando várias definições de construtor com diferentes listas 
+      de parâmetros em uma única classe. Dado abaixo é o exemplo onde temos várias definições para o construtor:*/
+
+      class Point {
+  // Overloads
+  constructor(x: number, y: string);
+  constructor(s: string);
+  constructor(xs: any, y?: any) {
+    // TBD
+  }
+}
+      /*Note que, semelhante à sobrecarga de função, temos apenas uma implementação do consrutor e itirates a única assinatura 
+      que está sobrecarregada.*/
+
       /*---Access Modifiers*/
+      /*No TypeScript, modificadores de acesso são palavras-chave usadas para controlar a visibilidade e acessibilidade de 
+      propriedades e métodos de classe. Existem três modificadores de acesso no TypeScript:
+
+      public:Este é o modificador de acesso padrão. Propriedades e métodos declarados como públicos podem ser acessados de 
+      qualquer lugar, dentro e fora da classe.
+      
+      private:Propriedades e métodos declarados como privados só podem ser acessados dentro da mesma classe. Não são 
+      acessíveis de fora da classe.
+
+    
+      protected:Propriedades e métodos declarados como protegidos podem ser acessados dentro da classe e suas subclasses. 
+      Eles não são acessíveis de fora da classe e suas subclasses.
+
+      Os modificadores de acesso no TypeScript permitem definir o nível de visibilidade e acessibilidade das propriedades 
+      e métodos em sua classe, tornando seu código mais sustentável e seguro.*/
+      
       /*---Abstract Classes*/
+      /*Classes abstratas no TypeScript são classes que não podem ser instanciadas por conta própria e devem ser subclassificadas 
+      por outras classes. As classes abstratas fornecem um modelo para outras classes e podem ter métodos abstratos, que 
+      são métodos sem um corpo e devem ser substituídos pela subclasse. Essas classes são úteis para definir uma interface 
+      comum ou funcionalidade básica que outras classes podem herdar e construir.*/
+      abstract class Animal {
+  abstract makeSound(): void;
+
+  move(): void {
+    console.log('moving...');
+  }
+}
+
+class Dog extends Animal {
+  makeSound(): void {
+    console.log('bark');
+  }
+}
       /*---Inheritance vs Polymorphism*/
-      /*---Method Overrinding*/
+      /*Herança e polimorfismo são dois conceitos fundamentais na programação orientada a objetos, e eles são suportados 
+      em TypeScript também.
+
+      Herança refere-se a um mecanismo onde uma subclasse herda propriedades e métodos de sua classe pai. Isso permite 
+      que uma subclasse reutilize o código e o comportamento de sua classe pai, além de adicionar ou modificar seu próprio 
+      comportamento. No TypeScript, a herança é obtida usando a palavra-chave extends.
+
+      Polimorfismo refere-se à capacidade de um objeto assumir muitas formas. Isso permite que objetos de diferentes
+      classes sejam tratados como objetos de uma classe comum, desde que compartilhem uma interface comum ou hierarquia 
+      de herança. Em TypeScript, o polimorfismo é conseguido através de substituição de método e sobrecarga de método.*/
+
+      class Animal {
+  makeSound(): void {
+    console.log('Making animal sound');
+  }
+}
+
+class Dog extends Animal {
+  makeSound(): void {
+    console.log('Bark');
+  }
+}
+
+class Cat extends Animal {
+  makeSound(): void {
+    console.log('Meow');
+  }
+}
+
+let animal: Animal;
+
+animal = new Dog();
+animal.makeSound(); // Output: Bark
+
+animal = new Cat();
+animal.makeSound(); // Output: Meow
+
+
+    /*---Method Overrinding*/
+    /*Em TypeScript, substituição de método é um mecanismo onde uma subclasse fornece uma nova implementação para um método 
+    que já está definido em sua classe pai. Isso permite que a subclasse herde o comportamento da classe pai, mas mude 
+    seu comportamento para atender às suas próprias necessidades.
+
+    Para substituir um método no TypeScript, a assinatura do método na subclasse deve corresponder exatamente à assinatura 
+    do método na classe pai.*/
+
+    class Animal {
+  makeSound(): void {
+    console.log('Making animal sound');
+  }
+}
+
+class Dog extends Animal {
+  makeSound(): void {
+    console.log('Bark');
+  }
+}
+
+let animal: Animal;
+
+animal = new Dog();
+animal.makeSound(); // Output: Bark
+
+
+  /*Neste exemplo, o Dog class substitui o método makeSound definido na classe Animal e fornece sua própria implementação. 
+  Quando o makeSound método é chamado em uma instância do Dog classe, ele vai usar a implementação no Dog classe em vez 
+  da implementação no Animal classe.*/
       
 /*PARAMETROS DE CONSTRUÇÃO*/
 /*No TypeScript, os parâmetros do construtor podem ser declarados com modificadores de acesso ( por exemplo. 
@@ -305,6 +538,25 @@ fora da classe também.*/
 /*Neste exemplo, a Animalclasse possui um campo de nome, um construtor que define o valor do namecampo e um makeSoundmétodo.
 Uma instância da Animalclasse pode ser criada usando a newpalavra-chave e seus métodos e propriedades podem ser acessados 
 usando a notação de ponto.*/
+
+
+/*GENÉRICOS*/
+/*Os genéricos no TypeScript são uma maneira de escrever código que pode funcionar com vários tipos de dados, em vez de ser 
+limitado a um único tipo de dados. Os genéricos permitem que você escreva funções, classes e interfaces que adotam um ou 
+mais parâmetros de tipo, que atuam como espaços reservados para os tipos de dados reais que serão usados quando a função, 
+classe, ou interface é usada.
+
+Por exemplo, o seguinte é uma função genérica que pega um único argumento de qualquer tipo de dados e retorna o mesmo tipo 
+de dados:*/
+
+function identity<T>(arg: T): T {
+  return arg;
+}
+
+let output = identity<string>('Hello'); // type of output will be 'string'
+
+/*Neste exemplo, o identity função pega um único argumento de qualquer tipo de dados e retorna o mesmo tipo de dados. 
+O tipo de dados real é especificado quando a função é chamada usando <string> antes do argumento "Hello".*/
 
 /*DECORADORES*/
 /*Decoradores são um recurso do TypeScript que permite modificar o comportamento de uma classe, propriedade, método ou 
