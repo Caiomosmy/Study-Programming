@@ -24,4 +24,4 @@ em escrever seu aplicativo em vez de passar dias discutindo as configurações. 
 flexibilidade de ajustar a configuração de cada ferramenta sem a necessidade de ejeção.*/
 
 
-/**/
+/*COMPONENTES*/
