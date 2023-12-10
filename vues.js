@@ -22,3 +22,6 @@ O Vue CLI pretende ser a linha de base de ferramentas padrão para o ecossistema
 ferramentas de compilação funcionem sem problemas, juntamente com padrões sensatos, para que você possa se concentrar 
 em escrever seu aplicativo em vez de passar dias discutindo as configurações. Ao mesmo tempo, ainda oferece a 
 flexibilidade de ajustar a configuração de cada ferramenta sem a necessidade de ejeção.*/
+
+
+/**/
