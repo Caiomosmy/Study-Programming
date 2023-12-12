@@ -5,7 +5,7 @@ padrão e fornece um modelo de programação declarativa e baseada em componente
 interfaces de usuário de forma eficiente, seja simples ou complexa.*/
 
 
-/*CLI Vues*/
+/*--- CLI Vues*/
 
 /*O Vue CLI é um sistema completo para o desenvolvimento rápido do Vue.js, fornecendo:
 
@@ -24,35 +24,35 @@ em escrever seu aplicativo em vez de passar dias discutindo as configurações. 
 flexibilidade de ajustar a configuração de cada ferramenta sem a necessidade de ejeção.*/
 
 
-/*COMPONENTES*/
+/*---COMPONENTES*/
 
 
 
-/*TEMPLATES*/
+/*---TEMPLATES*/
 
 
 
-/*DIRETIVAS*/
+/*---DIRETIVAS*/
 
 
 
-/*ESTILO API*/
+/*---ESTILO API*/
 
 
 
-/*APP CONFIGURATIONS*/
+/*---APP CONFIGURATIONS*/
 
 
 
-/*RENDERING LISTS*/
+/*---RENDERING LISTS*/
 
 
 
-/*CONDITIONAL RENDERING*/
+/*---CONDITIONAL RENDERING*/
 
 
 
-/*LIFECYCLE HOOKS*/
+/*---LIFECYCLE HOOKS*/
 
 
 
