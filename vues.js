@@ -40,24 +40,27 @@ flexibilidade de ajustar a configuração de cada ferramenta sem a necessidade d
 
 
 
-/**/
+/*APP CONFIGURATIONS*/
 
 
 
-/**/
+/*RENDERING LISTS*/
 
 
 
-/**/
+/*CONDITIONAL RENDERING*/
 
 
 
-/**/
+/*LIFECYCLE HOOKS*/
 
 
 
-/**/
+/*FORMS HANDLING*/
 
 
 
-/**/
+/*EVENTS HANDLING*/
+
+
+/*COMPUTED PROPERTIES*/
