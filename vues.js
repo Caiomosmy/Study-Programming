@@ -72,3 +72,5 @@ flexibilidade de ajustar a configuração de cada ferramenta sem a necessidade d
 /*VUE ROUTER*/
 
 /*ROUTING*/
+
+
