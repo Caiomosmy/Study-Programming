@@ -30,7 +30,10 @@ Os componentes nos permitem dividir a UI em peças independentes e reutilizávei
 
 
 
-/*---TEMPLATES*/
+/*---TEMPLATES
+O Vue usa uma sintaxe de modelo baseada em HTML que permite vincular declarativamente o DOM renderizado aos dados 
+de instâncias de componentes subjacentes. Todos os modelos Vue são HTML sintaticamente válidos que podem ser 
+analisados por navegadores compatíveis com especificações e analisadores HTML.*/
 
 
 
