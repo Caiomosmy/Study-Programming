@@ -79,3 +79,11 @@ analisados por navegadores compatíveis com especificações e analisadores HTML
 /*ROUTING*/
 
 
+/*SSR*/
+
+/*SSG*/
+
+/*Testing*/
+
+/*--Jest*/
+/**/
