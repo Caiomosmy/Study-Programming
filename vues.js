@@ -86,4 +86,6 @@ analisados por navegadores compatíveis com especificações e analisadores HTML
 /*Testing*/
 
 /*--Jest*/
-/**/
+/*Vue Testing Library*/
+/*Cypress*/
+
