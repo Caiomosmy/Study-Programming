@@ -89,3 +89,5 @@ analisados por navegadores compatíveis com especificações e analisadores HTML
 /*Vue Testing Library*/
 /*Cypress*/
 
+
+/*State Management*/
