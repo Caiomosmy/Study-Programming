@@ -51,8 +51,6 @@ Isso oferece flexibilidade para personalizar o comportamento do Vue.js em nível
 
 /*1. Modificação de Configurações Globais:*/
 
-javascript
-Copy code
 // main.js
 import { createApp } from 'vue';
 import App from './App.vue';
@@ -63,6 +61,53 @@ const app = createApp(App);
 app.config.globalProperties.meuGlobal = 'Valor Global';
 
 app.mount('#app');
+
+/*Agora, você pode acessar this.$meuGlobal em qualquer componente do aplicativo para obter o valor configurado globalmente.*/
+
+/*2. Modificação de Diretivas Globais:*/
+// main.js
+import { createApp } from 'vue';
+import App from './App.vue';
+
+const app = createApp(App);
+
+// Modificar a configuração global para diretivas
+app.config.globalProperties.$minhaDiretiva = {
+  mounted(el) {
+    el.style.backgroundColor = 'lightgray';
+  }
+};
+
+app.mount('#app');
+/*Agora, em qualquer componente, você pode usar a diretiva personalizada:*/
+
+<template>
+  <div v-minha-diretiva>
+    <!-- Conteúdo do componente -->
+  </div>
+</template>
+
+/*3. Modificação de Estratégia de Merging de Diretivas e Filtros:*/
+
+// main.js
+import { createApp } from 'vue';
+import App from './App.vue';
+
+const app = createApp(App);
+
+// Modificar a estratégia de merging global
+app.config.optionMergeStrategies.customOption = function (parentVal, childVal) {
+  return childVal !== undefined ? childVal : parentVal;
+};
+
+app.mount('#app');
+
+/*Agora, você pode usar a estratégia personalizada em componentes*/
+
+export default {
+  customOption: 'Valor Personalizado',
+  // Restante do código...
+};
 
 /*---RENDERING LISTS*/
 
