@@ -46,7 +46,8 @@ analisados por navegadores compatíveis com especificações e analisadores HTML
 
 
 /*---APP CONFIGURATIONS*/
-
+/*No Vue.js, cada instância de aplicativo expõe um objeto config que contém configurações específicas para essa instância. Essas configurações podem ser modificadas antes de montar o aplicativo. 
+Isso oferece flexibilidade para personalizar o comportamento do Vue.js em nível de aplicativo. Vamos explorar alguns exemplos práticos:*/
 
 
 /*---RENDERING LISTS*/
