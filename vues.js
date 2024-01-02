@@ -109,6 +109,20 @@ export default {
   // Restante do código...
 };
 
+/*Modificação de Configurações Globais*/
+
+// main.js
+import { createApp } from 'vue';
+import App from './App.vue';
+
+const app = createApp(App);
+
+// Modificar a configuração global do aplicativo
+app.config.globalProperties.meuGlobal = 'Valor Global';
+
+app.mount('#app');
+
+
 /*---RENDERING LISTS*/
 
 
@@ -146,7 +160,9 @@ export default {
 /*Testing*/
 
 /*--Jest*/
+
 /*Vue Testing Library*/
+
 /*Cypress*/
 
 
