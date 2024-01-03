@@ -255,6 +255,84 @@ export default {
 
 
 /*---CONDITIONAL RENDERING*/
+/*A diretiva v-if é usado para renderizar condicionalmente um bloco. O bloco será renderizado apenas se a expressão da diretiva
+retornar um valor verdadeiro.*/
+
+1. Renderização Condicional Simples:
+<template>
+  <div>
+    <p v-if="mostrarParagrafo">Este parágrafo será renderizado condicionalmente.</p>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      mostrarParagrafo: true,
+    };
+  },
+};
+</script>
+
+
+2. Renderização Condicional com v-else:
+<template>
+  <div>
+    <p v-if="mostrarParagrafo">Este parágrafo será renderizado condicionalmente.</p>
+    <p v-else>Este parágrafo será renderizado se a condição não for atendida.</p>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      mostrarParagrafo: true,
+    };
+  },
+};
+</script>
+
+  
+3. Renderização Condicional com v-else-if:
+<template>
+  <div>
+    <p v-if="tipo === 'A'">Tipo A</p>
+    <p v-else-if="tipo === 'B'">Tipo B</p>
+    <p v-else>Tipo desconhecido</p>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      tipo: 'B',
+    };
+  },
+};
+</script>
+
+  
+4. Renderização Condicional usando v-show:
+<template>
+  <div>
+    <p v-show="mostrarParagrafo">Este parágrafo será exibido/oculto condicionalmente.</p>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      mostrarParagrafo: true,
+    };
+  },
+};
+</script>
+
+
 
 
 
