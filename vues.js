@@ -95,7 +95,7 @@ import App from './App.vue';
 
 const app = createApp(App);
 
-// Modificar a estratégia de merging global
+// Modificar a estratégia de merging global //
 app.config.optionMergeStrategies.customOption = function (parentVal, childVal) {
   return childVal !== undefined ? childVal : parentVal;
 };
@@ -124,6 +124,133 @@ app.mount('#app');
 
 
 /*---RENDERING LISTS*/
+/*Podemos usar o v-for diretiva para renderizar uma lista de itens com base em uma matriz. O v-for a diretiva requer uma sintaxe especial na 
+forma de item in items, onde items é o array de dados de origem e item é um alias para o elemento array que está sendo iterado.*/
+
+//1. Renderização Simples de Lista://
+
+<template>
+  <div>
+    <ul>
+      <li v-for="item in lista" :key="item.id">{{ item.nome }}</li>
+    </ul>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      lista: [
+        { id: 1, nome: 'Item 1' },
+        { id: 2, nome: 'Item 2' },
+        { id: 3, nome: 'Item 3' },
+      ],
+    };
+  },
+};
+</script>
+
+//2. Utilizando Índice na Iteração://
+<template>
+  <div>
+    <ul>
+      <li v-for="(item, index) in lista" :key="item.id">
+        {{ index + 1 }}. {{ item.nome }}
+      </li>
+    </ul>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      lista: [
+        { id: 1, nome: 'Item 1' },
+        { id: 2, nome: 'Item 2' },
+        { id: 3, nome: 'Item 3' },
+      ],
+    };
+  },
+};
+</script>
+
+
+
+//3. Renderizando Números de 1 a 5://
+
+<template>
+  <div>
+    <ul>
+      <li v-for="n in 5" :key="n">Item {{ n }}</li>
+    </ul>
+  </div>
+</template>
+
+<script>
+export default {
+  // Restante do código...
+};
+</script>
+
+
+//4. Iterando em Objetos://
+
+<template>
+  <div>
+    <ul>
+      <li v-for="(value, key) in objeto" :key="key">
+        {{ key }}: {{ value }}
+      </li>
+    </ul>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      objeto: {
+        nome: 'Exemplo',
+        idade: 25,
+        cidade: 'Cidade',
+      },
+    };
+  },
+};
+</script>
+
+
+
+//5. Utilizando v-for com Métodos Computados://
+
+<template>
+  <div>
+    <ul>
+      <li v-for="item in itensFiltrados" :key="item.id">{{ item.nome }}</li>
+    </ul>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      todosOsItens: [
+        { id: 1, nome: 'Item 1', ativo: true },
+        { id: 2, nome: 'Item 2', ativo: false },
+        { id: 3, nome: 'Item 3', ativo: true },
+      ],
+    };
+  },
+  computed: {
+    itensFiltrados() {
+      return this.todosOsItens.filter(item => item.ativo);
+    },
+  },
+};
+</script>
 
 
 
