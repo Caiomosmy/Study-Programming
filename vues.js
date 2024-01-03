@@ -332,11 +332,102 @@ export default {
 };
 </script>
 
-
-
-
-
 /*---LIFECYCLE HOOKS*/
+/*Cada instância do componente Vue passa por uma série de etapas de inicialização quando é criada - 
+por exemplo, ela precisa configurar a observação de dados, compilar o modelo, montar a instância no DOM, etc, 
+e atualize o DOM quando os dados mudarem. Ao longo do caminho, ele também executa funções chamadas hooks de 
+ciclo de vida, dando aos usuários a oportunidade de adicionar seu próprio código em estágios específicos.
+
+Os ganchos (lifecycle hooks) no Vue.js são métodos especiais que são chamados automaticamente em determinados 
+estágios do ciclo de vida de uma instância do componente Vue. Esses ganchos oferecem oportunidades para 
+execução de lógica personalizada em momentos específicos, como antes da criação, montagem, atualização e 
+destruição do componente. Aqui estão alguns dos principais ganchos do ciclo de vida e exemplos práticos:
+*/
+
+1. beforeCreate: Chamado antes da instância do componente ser criada.
+<script>
+export default {
+  beforeCreate() {
+    console.log('beforeCreate: Componente está prestes a ser criado.');
+  },
+};
+</script>
+
+  
+2. created: Chamado após a instância do componente ser criada, mas antes da montagem no DOM.
+<script>
+export default {
+  created() {
+    console.log('created: Componente foi criado.');
+  },
+};
+</script>
+
+  
+3. beforeMount: Chamado antes do componente ser montado no DOM.
+<script>
+export default {
+  beforeMount() {
+    console.log('beforeMount: Componente está prestes a ser montado no DOM.');
+  },
+};
+</script>
+
+  
+4. mounted: Chamado após o componente ser montado no DOM.
+<script>
+export default {
+  mounted() {
+    console.log('mounted: Componente foi montado no DOM.');
+  },
+};
+</script>
+
+  
+5. beforeUpdate: Chamado antes do componente ser atualizado (quando os dados mudam, mas antes da atualização do DOM).
+<script>
+export default {
+  beforeUpdate() {
+    console.log('beforeUpdate: Componente está prestes a ser atualizado.');
+  },
+};
+</script>
+
+  
+6. updated: Chamado após o componente ser atualizado (quando os dados mudam e o DOM foi atualizado).
+<script>
+export default {
+  updated() {
+    console.log('updated: Componente foi atualizado.');
+  },
+};
+</script>
+
+  
+7. beforeUnmount: Chamado antes do componente ser desmontado do DOM.
+<script>
+export default {
+  beforeUnmount() {
+    console.log('beforeUnmount: Componente está prestes a ser desmontado.');
+  },
+};
+</script>
+
+  
+8. unmounted: Chamado após o componente ser desmontado do DOM.
+<script>
+export default {
+  unmounted() {
+    console.log('unmounted: Componente foi desmontado.');
+  },
+};
+</script>
+
+
+
+
+
+
 
 
 
