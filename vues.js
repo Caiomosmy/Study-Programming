@@ -423,16 +423,102 @@ export default {
 };
 </script>
 
-
-
-
-
-
-
-
-
 /*FORMS HANDLING*/
+/*O v-model no Vue.js é uma diretiva que permite criar ligações de dados bidirecionais entre o estado interno do componente 
+e um elemento de formulário. Ele simplifica a interação com elementos de entrada de formulários, automatizando a atualização
+do estado do componente quando o valor do formulário é alterado e vice-versa. Aqui estão alguns exemplos práticos de como 
+usar v-model:*/
 
+1. Texto de Entrada (Input):
+<template>
+  <div>
+    <label for="nome">Nome:</label>
+    <input id="nome" type="text" v-model="nome" />
+    <p>Nome digitado: {{ nome }}</p>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      nome: '',
+    };
+  },
+};
+</script>
+
+2. Seleção (Select):
+<template>
+  <div>
+    <label for="selecao">Escolha uma opção:</label>
+    <select id="selecao" v-model="opcaoSelecionada">
+      <option value="opcao1">Opção 1</option>
+      <option value="opcao2">Opção 2</option>
+      <option value="opcao3">Opção 3</option>
+    </select>
+    <p>Opção selecionada: {{ opcaoSelecionada }}</p>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      opcaoSelecionada: 'opcao1',
+    };
+  },
+};
+</script>
+
+3. Caixa de Seleção (Checkbox):
+<template>
+  <div>
+    <input type="checkbox" id="aceitar" v-model="aceitouTermos" />
+    <label for="aceitar">Aceito os termos e condições</label>
+    <p>Estado da caixa de seleção: {{ aceitouTermos }}</p>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      aceitouTermos: false,
+    };
+  },
+};
+</script>
+
+4. Botões de Rádio (Radio Buttons):
+<template>
+  <div>
+    <input type="radio" id="radio1" value="opcao1" v-model="opcaoSelecionada" />
+    <label for="radio1">Opção 1</label>
+
+    <input type="radio" id="radio2" value="opcao2" v-model="opcaoSelecionada" />
+    <label for="radio2">Opção 2</label>
+
+    <input type="radio" id="radio3" value="opcao3" v-model="opcaoSelecionada" />
+    <label for="radio3">Opção 3</label>
+
+    <p>Opção selecionada: {{ opcaoSelecionada }}</p>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      opcaoSelecionada: 'opcao1',
+    };
+  },
+};
+</script>
+
+/*O v-model torna o gerenciamento de formulários mais simples e eficiente, automatizando a sincronização entre o estado 
+do componente e os elementos do formulário. Esses são apenas alguns exemplos de como você pode usar o v-model em 
+diferentes tipos de elementos de formulário.*/
 
 
 /*EVENTS HANDLING*/
