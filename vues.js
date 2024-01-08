@@ -631,7 +631,114 @@ aos eventos podem realizar operações mais complexas, como alterar o estado do 
 entre outras ações.*/
 
 /*COMPUTED PROPERTIES*/
+/*Propriedades computadas no Vue.js são uma maneira poderosa de simplificar e organizar a lógica complexa em seu componente. 
+Elas permitem que você defina propriedades que são derivadas de outras propriedades reativas e são recalculadas 
+automaticamente quando as dependências mudam. Vamos explorar alguns exemplos práticos de propriedades computadas:*/
 
+1. Calculando uma Propriedade com Base em Dados Existente:
+
+<template>
+  <div>
+    <p>Preço: {{ preco }}</p>
+    <p>Preço com Desconto: {{ precoComDesconto }}</p>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      precoBase: 100,
+      desconto: 0.2,
+    };
+  },
+  computed: {
+    precoComDesconto() {
+      return this.precoBase * (1 - this.desconto);
+    },
+  },
+};
+</script>
+
+2. Concatenando Strings Dinamicamente:
+<template>
+  <div>
+    <p>{{ nomeCompleto }}</p>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      nome: 'João',
+      sobrenome: 'Silva',
+    };
+  },
+  computed: {
+    nomeCompleto() {
+      return this.nome + ' ' + this.sobrenome;
+    },
+  },
+};
+</script>
+
+3. Filtrando uma Lista de Itens:
+<template>
+  <div>
+    <ul>
+      <li v-for="item in itensFiltrados">{{ item }}</li>
+    </ul>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      todosOsItens: ['Item 1', 'Item 2', 'Item 3'],
+      filtro: 'Item 2',
+    };
+  },
+  computed: {
+    itensFiltrados() {
+      return this.todosOsItens.filter(item => item !== this.filtro);
+    },
+  },
+};
+</script>
+
+4. Propriedades Computadas Dependentes de Outras Propriedades Computadas:
+<template>
+  <div>
+    <p>Área: {{ area }}</p>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      largura: 5,
+      altura: 10,
+    };
+  },
+  computed: {
+    area() {
+      return this.calculaArea(this.largura, this.altura);
+    },
+  },
+  methods: {
+    calculaArea(largura, altura) {
+      return largura * altura;
+    },
+  },
+};
+</script>
+
+/*As propriedades computadas no Vue.js permitem encapsular lógica mais complexa de uma maneira declarativa e reativa, 
+melhorando a legibilidade e a manutenção do seu código. Elas são recalculadas automaticamente sempre que suas dependências
+mudam, garantindo consistência e eficiência.*/
 
 
 /*Ecosystem*/
