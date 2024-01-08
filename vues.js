@@ -522,7 +522,113 @@ diferentes tipos de elementos de formulário.*/
 
 
 /*EVENTS HANDLING*/
+/*No Vue.js, o tratamento de eventos é essencial para criar interatividade em um site dinâmico. Os eventos podem ser 
+associados a elementos de formulário, cliques de botão, movimentos do mouse, entre outros. Vamos explorar alguns 
+exemplos práticos de tratamento de eventos em Vue.js:*/
 
+1. Cliques de Botão:
+<template>
+  <div>
+    <button @click="manipularClique">Clique-me</button>
+  </div>
+</template>
+
+<script>
+export default {
+  methods: {
+    manipularClique() {
+      console.log('Botão clicado!');
+    },
+  },
+};
+</script>
+
+2. Eventos de Teclado:
+<template>
+  <div>
+    <input @keyup="manipularTecla" placeholder="Pressione uma tecla" />
+  </div>
+</template>
+
+<script>
+export default {
+  methods: {
+    manipularTecla(event) {
+      console.log('Tecla pressionada:', event.key);
+    },
+  },
+};
+</script>
+
+3. Eventos de Mouse:
+<template>
+  <div>
+    <div @mouseover="manipularMouseOver" @mouseout="manipularMouseOut">
+      Passe o mouse sobre mim
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  methods: {
+    manipularMouseOver() {
+      console.log('Mouse sobre o elemento!');
+    },
+    manipularMouseOut() {
+      console.log('Mouse fora do elemento!');
+    },
+  },
+};
+</script>
+
+4. Submissão de Formulário:
+<template>
+  <div>
+    <form @submit.prevent="manipularSubmissao">
+      <input type="text" v-model="mensagem" />
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      mensagem: '',
+    };
+  },
+  methods: {
+    manipularSubmissao() {
+      console.log('Formulário enviado com mensagem:', this.mensagem);
+    },
+  },
+};
+</script>
+
+5. Delegação de Eventos:
+<template>
+  <div @click="manipularClick">
+    <button>Botão 1</button>
+    <button>Botão 2</button>
+  </div>
+</template>
+
+<script>
+export default {
+  methods: {
+    manipularClick(event) {
+      console.log('Elemento clicado:', event.target.tagName);
+    },
+  },
+};
+</script>
+
+/*Esses são apenas alguns exemplos para ilustrar como você pode tratar eventos no Vue.js. A utilização do @ seguido 
+do nome do evento simplifica o vínculo e o tratamento de eventos em seus componentes Vue.js. Os métodos associados 
+aos eventos podem realizar operações mais complexas, como alterar o estado do componente, fazer chamadas a APIs, 
+entre outras ações.*/
 
 /*COMPUTED PROPERTIES*/
 
