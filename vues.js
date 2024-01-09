@@ -740,6 +740,68 @@ export default {
 melhorando a legibilidade e a manutenção do seu código. Elas são recalculadas automaticamente sempre que suas dependências
 mudam, garantindo consistência e eficiência.*/
 
+TOPIC ADVANCE
+/*Vamos criar um exemplo prático de uma diretiva personalizada em Vue.js que destaca um elemento quando o mouse passa sobre ele. Esta diretiva customizada será chamada de v-highlight.*/
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Custom Directive</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+
+<div id="app">
+  <p v-highlight="'yellow'" @mouseover="highlightElement" @mouseleave="resetHighlight">
+    Passe o mouse sobre mim para destacar!
+  </p>
+</div>
+
+<script>
+// Definindo a diretiva globalmente
+Vue.directive('highlight', {
+  bind(el, binding) {
+    // O argumento 'binding' contém informações sobre a diretiva
+    el.style.backgroundColor = binding.value;
+  },
+  unbind(el) {
+    // Restaura o estilo quando a diretiva é removida
+    el.style.backgroundColor = null;
+  }
+});
+
+new Vue({
+  el: '#app',
+  methods: {
+    highlightElement() {
+      // Lógica adicional quando o mouse está sobre o elemento (se necessário)
+      console.log('Mouse sobre o elemento');
+    },
+    resetHighlight() {
+      // Lógica adicional quando o mouse deixa o elemento (se necessário)
+      console.log('Mouse deixou o elemento');
+    }
+  }
+});
+</script>
+
+</body>
+</html>
+
+Neste exemplo:
+
+Criamos uma diretiva global chamada v-highlight, que define o comportamento de destaque para um elemento.
+
+O valor passado para a diretiva é a cor do destaque, que é definido usando v-highlight="'yellow'".
+
+As funções @mouseover e @mouseleave são usadas para executar lógica adicional quando o mouse passa sobre o elemento e quando ele deixa o elemento, respectivamente.
+
+Boas práticas incluem o uso de bind para definir o comportamento inicial da diretiva e unbind para garantir que o estilo seja restaurado quando a diretiva é removida.
+
+Lembre-se de que diretivas personalizadas são mais apropriadas para manipulações de DOM de baixo nível e devem ser usadas com cuidado para não violar os princípios do Vue.js.
+
 
 /*Ecosystem*/
 
