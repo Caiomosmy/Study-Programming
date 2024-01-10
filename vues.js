@@ -803,6 +803,77 @@ Boas práticas incluem o uso de bind para definir o comportamento inicial da dir
 Lembre-se de que diretivas personalizadas são mais apropriadas para manipulações de DOM de baixo nível e devem ser usadas com cuidado para não violar os princípios do Vue.js.
 
 
+Eventos personalizados
+
+/*Às vezes você pode precisar definir eventos personalizados que podem ser usados ​​em seus componentes. Vue.js permite que você faça isso emitindo objetos de eventos personalizados usando $emit*/
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Custom Events</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+
+<div id="app">
+  <counter :limit="5" @limit-reached="handleLimitReached"></counter>
+</div>
+
+<script>
+// Componente de contador
+Vue.component('counter', {
+  template: `
+    <div>
+      <p>Contador: {{ count }}</p>
+      <button @click="increment">Incrementar</button>
+    </div>
+  `,
+  props: {
+    limit: {
+      type: Number,
+      required: true
+    }
+  },
+  data() {
+    return {
+      count: 0
+    };
+  },
+  methods: {
+    increment() {
+      this.count++;
+      if (this.count === this.limit) {
+        this.$emit('limit-reached', this.count);
+      }
+    }
+  }
+});
+
+new Vue({
+  el: '#app',
+  methods: {
+    handleLimitReached(value) {
+      alert(`Limite atingido! Contador: ${value}`);
+    }
+  }
+});
+</script>
+
+</body>
+</html>
+
+Neste exemplo:
+
+Criamos um componente counter que possui um botão para incrementar o contador. Esse componente aceita uma propriedade chamada limit que define o limite do contador.
+
+Quando o botão é clicado, a função increment é chamada, incrementando o contador e verificando se atingiu o limite. Se o limite for atingido, um evento personalizado chamado limit-reached é emitido usando this.$emit.
+
+No componente pai, usamos @limit-reached para ouvir esse evento personalizado e chamamos a função handleLimitReached para lidar com a situação quando o limite é atingido.
+
+Este exemplo demonstra como você pode usar eventos personalizados para comunicar entre componentes e executar ações específicas quando certos eventos ocorrem.
+
 /*Ecosystem*/
 
 /*VUE ROUTER*/
