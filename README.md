@@ -1,8 +1,14 @@
+#SOBRE OS MEUS CONHECIMENTOS 
+Aqui fica de maneira crua meus conhecimentos, e o que eu estudei e como aplico e aonde aplico. 
+
 ## Stacks Back-end
-Python, JavaScript, PHP, R, TypeScript, Vue.js
+Python, PHP, R, TypeScript
+
+## Stacks Front-end
+JavaScript, Vues.JS, Nuxt.Js
 
 ## Frameworks
-Django, NodeJS, Express.JS, Nuxt.js
+Django, NodeJS, Express.JS
 
 ## APIs
 Restful, GraphQL, Apollo
