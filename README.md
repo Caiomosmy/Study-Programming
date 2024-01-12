@@ -1,14 +1,14 @@
-# Stacks
-Python, JavaScript, PHP, R
+## Stacks Back-end
+Python, JavaScript, PHP, R, TypeScript, Vue.js
 
-# Frameworks
-Django, NodeJS, Express.JS, Nest.JS 
+## Frameworks
+Django, NodeJS, Express.JS, Nuxt.js
 
-# APIs
-Restful, GraphQL
+## APIs
+Restful, GraphQL, Apollo
 
-# Banco de Dados
+## Banco de Dados
 MySQL, NoSQL
 
-# DevOps 
-Git
+## DevOps 
+Git, AWS, Docker
