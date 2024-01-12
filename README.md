@@ -36,24 +36,24 @@ PROFISSIONAIS
 - TypeScript
 
 ## Stacks Front-end
-JavaScript
-Vues.JS
-Nuxt.Js
+- JavaScript
+- Vues.JS
+- Nuxt.Js
 
 ## Frameworks
-Django
-NodeJS
-Express.JS
+- Django
+- NodeJS
+- Express.JS
 
 ## APIs
-Restful
-GraphQL
+- Restful
+- GraphQL
 
 ## Banco de Dados
-MySQL
-NoSQL
+- MySQL
+- NoSQL
 
 ## DevOps 
-Git
-AWS 
-Docker
+- Git
+- AWS 
+- Docker
