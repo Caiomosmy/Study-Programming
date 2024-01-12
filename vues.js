@@ -792,15 +792,11 @@ new Vue({
 
 Neste exemplo:
 
-Criamos uma diretiva global chamada v-highlight, que define o comportamento de destaque para um elemento.
-
+/*Criamos uma diretiva global chamada v-highlight, que define o comportamento de destaque para um elemento.
 O valor passado para a diretiva é a cor do destaque, que é definido usando v-highlight="'yellow'".
-
 As funções @mouseover e @mouseleave são usadas para executar lógica adicional quando o mouse passa sobre o elemento e quando ele deixa o elemento, respectivamente.
-
 Boas práticas incluem o uso de bind para definir o comportamento inicial da diretiva e unbind para garantir que o estilo seja restaurado quando a diretiva é removida.
-
-Lembre-se de que diretivas personalizadas são mais apropriadas para manipulações de DOM de baixo nível e devem ser usadas com cuidado para não violar os princípios do Vue.js.
+Lembre-se de que diretivas personalizadas são mais apropriadas para manipulações de DOM de baixo nível e devem ser usadas com cuidado para não violar os princípios do Vue.js.*/
 
 
 Eventos personalizados
