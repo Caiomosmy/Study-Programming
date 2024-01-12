@@ -25,15 +25,15 @@ PROFISSIONAIS
 11. 🎯- 12 a 20 Livros no ano
 
 ## Melhorias Adicionais
-Arquitetura e Design de Software
-System Design /*(Design de Sistema)*/
-Design System /*(Sistema de Design)*/
+- Arquitetura e Design de Software
+- System Design /*(Design de Sistema)*/
+- Design System /*(Sistema de Design)*/
 
 ## Stacks Back-end
-Python
-PHP
-R
-TypeScript
+- Python
+- PHP
+- R
+- TypeScript
 
 ## Stacks Front-end
 JavaScript
