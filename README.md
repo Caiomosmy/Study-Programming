@@ -12,17 +12,17 @@ pois quero expandir minhas influências e Networking me tornando uma autoridade 
 área de tecnologia. 
 
 PROFISSIONAIS
-🎯- SaaS - Mind Kimera - Marketing Lançado do Mercado
-🎯- SaaS - Leviatã Lançado - Marketing | Lançado no Mercado
-🎯- SaaS - Omni Market - Varejo | Lançado no Mercado 
-🎯- SaaS - Tooth White - Ondotologia | Lançado no Mercado
-🎯- Saas - Scrapfy - Raspagem de dados | Lançado no mercado
-🎯- English C1 (Avançado)
-🎯- 20 Projetos desenvolvidos 
-🎯- 100 Artigos escrito originalmente (Medium)
-🎯- Conexões no LinkedIn
-🎯- Conexões no GitHub
-🎯- 12 a 20 Livros no ano
+1. 🎯- SaaS - Mind Kimera - Marketing Lançado do Mercado
+2. 🎯- SaaS - Leviatã Lançado - Marketing | Lançado no Mercado
+3. 🎯- SaaS - Omni Market - Varejo | Lançado no Mercado 
+4. 🎯- SaaS - Tooth White - Ondotologia | Lançado no Mercado
+5. 🎯- Saas - Scrapfy - Raspagem de dados | Lançado no mercado
+6. 🎯- English C1 (Avançado)
+7. 🎯- 20 Projetos desenvolvidos 
+8. 🎯- 100 Artigos escrito originalmente (Medium)
+9. 🎯- Conexões no LinkedIn
+10. 🎯- Conexões no GitHub
+11. 🎯- 12 a 20 Livros no ano
 
 ## Melhorias Adicionais
 Arquitetura e Design de Software
