@@ -1,9 +1,9 @@
 # SOBRE OS MEUS CONHECIMENTOS 
 
-Nome: Caio Henrique Pereira Dos Santos
-Idade: 20 Anos
-Experiência : 2y
-
+- Nome: Caio Henrique Pereira Dos Santos
+- Idade: 20 Anos
+- Experiência : 2y
+- Objetivo Profissional : Desenvolvedor Full Stack Sênior 
 
 Aqui fica de maneira crua meus conhecimentos, e o que eu estudei e como aplico e aonde aplico. 
 Neste ano de 2024, tenho mais interesse em acelerar meus Projetos e lança-los no mercado. Meus
