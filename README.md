@@ -22,7 +22,7 @@ PROFISSIONAIS
 8. 🎯- 100 Artigos escrito originalmente (Medium)
 9. 🎯- Conexões no LinkedIn
 10. 🎯- Conexões no GitHub
-11. 🎯- 12 a 20 Livros no ano
+11. 🎯- 12 a 20 Livros no ano lidos 
 
 ## Melhorias Adicionais
 - Arquitetura e Design de Software
