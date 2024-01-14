@@ -18,7 +18,7 @@ OBJETIVO PROFISSIONAIS 2023-24
 4. 🎯- SaaS - Tooth White - Ondotologia | Lançado no Mercado
 5. 🎯- Saas - Scrapfy - Raspagem de dados | Lançado no Mercado
 6. 🎯- English C1 (Avançado)
-7. 🎯- 00/20 Projetos desenvolvidos 
+7. 🎯- 00/50 Projetos desenvolvidos 
 8. 🎯- 000/100 Artigos escrito originalmente (Medium)
 9. 🎯- Conexões no LinkedIn
 10. 🎯- Conexões no GitHub
