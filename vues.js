@@ -41,6 +41,13 @@ analisados por navegadores compatíveis com especificações e analisadores HTML
 /*As diretivas no Vue.js são instruções especiais que podem ser usadas nos modelos para manipular o DOM de forma declarativa. Elas são prefixadas com "v-" e são usadas para adicionar comportamentos específicos aos elementos ou para controlar a renderização condicional. Aqui estão algumas diretivas principais do Vue.js:*/
 
 
+/*1. v-model:
+
+Fornece ligação bidirecional entre um elemento de entrada de formulário e uma variável do Vue.js.*/
+
+<input v-model="mensagem" />
+
+
 
 
 /*---ESTILO API*/
