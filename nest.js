@@ -1,4 +1,4 @@
-//Estudos com Nest.js 
+//INTRODUÇÃO AO NUXT.JS 
 
 
-//INTRODUÇÃO
+//CONFIGURAÇÃO
