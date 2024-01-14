@@ -38,7 +38,7 @@ analisados por navegadores compatíveis com especificações e analisadores HTML
 
 
 /*---DIRETIVAS*/
-/As diretivas no Vue.js são instruções especiais que podem ser usadas nos modelos para manipular o DOM de forma declarativa. Elas são prefixadas com "v-" e são usadas para adicionar comportamentos específicos aos elementos ou para controlar a renderização condicional. Aqui estão algumas diretivas principais do Vue.js:
+/*As diretivas no Vue.js são instruções especiais que podem ser usadas nos modelos para manipular o DOM de forma declarativa. Elas são prefixadas com "v-" e são usadas para adicionar comportamentos específicos aos elementos ou para controlar a renderização condicional. Aqui estão algumas diretivas principais do Vue.js:*/
 
 
 
