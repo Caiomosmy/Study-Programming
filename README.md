@@ -11,49 +11,49 @@ Objetivos são grandes, mais deixarei uma base aqui para terem noção do que em
 pois quero expandir minhas influências e Networking me tornando uma autoridade (com mérito) na 
 área de tecnologia. 
 
-PROFISSIONAIS
+OBJETIVO PROFISSIONAIS 2023-24
 1. 🎯- SaaS - Mind Kimera - Marketing Lançado do Mercado
 2. 🎯- SaaS - Leviatã Lançado - Marketing | Lançado no Mercado
 3. 🎯- SaaS - Omni Market - Varejo | Lançado no Mercado 
 4. 🎯- SaaS - Tooth White - Ondotologia | Lançado no Mercado
 5. 🎯- Saas - Scrapfy - Raspagem de dados | Lançado no mercado
 6. 🎯- English C1 (Avançado)
-7. 🎯- 20 Projetos desenvolvidos 
-8. 🎯- 100 Artigos escrito originalmente (Medium)
+7. 🎯- 00/20 Projetos desenvolvidos 
+8. 🎯- 000/100 Artigos escrito originalmente (Medium)
 9. 🎯- Conexões no LinkedIn
 10. 🎯- Conexões no GitHub
-11. 🎯- 12 a 20 Livros no ano lidos 
+11. 🎯- 00/20 Livros no ano lidos 
 
 ## Melhorias Adicionais
-- Arquitetura e Design de Software
-- System Design /*(Design de Sistema)*/
-- Design System /*(Sistema de Design)*/
+✅ - Arquitetura e Design de Software
+✅ - System Design /*(Design de Sistema)*/
+✅ - Design System /*(Sistema de Design)*/
 
 ## Stacks Back-end
-- Python
-- PHP
-- R
-- TypeScript
+- ✅ Python
+- ✅ PHP
+- ✅ R
+- ✅ TypeScript
 
 ## Stacks Front-end
-- JavaScript
-- Vues.JS
-- Nuxt.Js
+- ✅ JavaScript
+- ✅ Vues.JS
+- 🎯 Nuxt.Js
 
 ## Frameworks
-- Django
-- NodeJS
-- Express.JS
+- ✅ Django
+- ✅ NodeJS
+- ✅ Express.JS
 
 ## APIs
-- Restful
-- GraphQL
+- ✅ Restful
+- ✅ GraphQL
 
 ## Banco de Dados
-- MySQL
-- NoSQL
+- ✅ MySQL
+- ✅ NoSQL
 
 ## DevOps 
-- Git
-- AWS 
-- Docker
+- ✅ Git
+- ✅ AWS 
+- 🎯 Docker
