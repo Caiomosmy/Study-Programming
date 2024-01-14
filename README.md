@@ -25,9 +25,9 @@ OBJETIVO PROFISSIONAIS 2023-24
 11. 🎯- 00/20 Livros no ano lidos 
 
 ## Melhorias Adicionais
-✅ - Arquitetura e Design de Software
-✅ - System Design /*(Design de Sistema)*/
-✅ - Design System /*(Sistema de Design)*/
+- ✅ Arquitetura e Design de Software
+- ✅ System Design /*(Design de Sistema)*/
+- ✅ Design System /*(Sistema de Design)*/
 
 ## Stacks Back-end
 - ✅ Python
