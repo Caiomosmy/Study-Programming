@@ -9,7 +9,7 @@ Aqui fica de maneira crua meus conhecimentos, e o que eu estudei e como aplico e
 Neste ano de 2024, tenho mais interesse em acelerar meus Projetos e lança-los no mercado. Meus
 Objetivos são grandes, mais deixarei uma base aqui para terem noção do que em 2024 irei atingir ! 
 pois quero expandir minhas influências e Networking me tornando uma autoridade (com mérito) na 
-área de tecnologia. 
+área de tecnologia.
 
 OBJETIVO PROFISSIONAIS 2023-24
 1. 🎯- SaaS - Mind Kimera - Marketing Lançado do Mercado
@@ -57,3 +57,6 @@ OBJETIVO PROFISSIONAIS 2023-24
 - ✅ Git
 - ✅ AWS 
 - 🎯 Docker
+
+###NOTAS MENSAIS SOBRE O PROGRESSO
+1. JANEIRO - 
