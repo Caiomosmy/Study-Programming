@@ -869,15 +869,925 @@ new Vue({
 </body>
 </html>
 
-Neste exemplo:
+/*Neste exemplo:
+Criamos um componente counter que possui um botão para incrementar o contador. Esse componente aceita uma propriedade 
+chamada limit que define o limite do contador. Quando o botão é clicado, a função increment é chamada, incrementando o 
+contador e verificando se atingiu o limite. Se o limite for atingido, um evento personalizado chamado limit-reached é 
+emitido usando this.$emit. No componente pai, usamos @limit-reached para ouvir esse evento personalizado e chamamos a 
+função handleLimitReached para lidar com a situação quando o limite é atingido. Este exemplo demonstra como você pode 
+usar eventos personalizados para comunicar entre componentes e executar ações específicas quando certos eventos ocorrem.*/
 
-Criamos um componente counter que possui um botão para incrementar o contador. Esse componente aceita uma propriedade chamada limit que define o limite do contador.
+/*PLUGINS
+Neste caso, criaremos um plugin simples que adiciona um método de formatação de data a todos os componentes Vue.*/
 
-Quando o botão é clicado, a função increment é chamada, incrementando o contador e verificando se atingiu o limite. Se o limite for atingido, um evento personalizado chamado limit-reached é emitido usando this.$emit.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Plugin</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
 
-No componente pai, usamos @limit-reached para ouvir esse evento personalizado e chamamos a função handleLimitReached para lidar com a situação quando o limite é atingido.
+<div id="app">
+  <p>{{ formattedDate }}</p>
+</div>
 
-Este exemplo demonstra como você pode usar eventos personalizados para comunicar entre componentes e executar ações específicas quando certos eventos ocorrem.
+<script>
+// Definindo o plugin
+const datePlugin = {
+  install(Vue) {
+    // Adicionando um método global para formatação de data
+    Vue.prototype.$formatDate = function (date) {
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      return new Date(date).toLocaleDateString(undefined, options);
+    };
+  }
+};
+
+// Usando o plugin
+Vue.use(datePlugin);
+
+new Vue({
+  el: '#app',
+  data() {
+    return {
+      currentDate: Date.now()
+    };
+  },
+  computed: {
+    formattedDate() {
+      // Usando o método de formatação de data fornecido pelo plugin
+      return this.$formatDate(this.currentDate);
+    }
+  }
+});
+</script>
+
+</body>
+</html>
+
+/*Neste exemplo:
+Criamos um objeto datePlugin que contém um método install. Este método é chamado quando o plugin é instalado, e é onde adicionamos a funcionalidade desejada.
+No método install, usamos Vue.prototype para adicionar um método global chamado $formatDate que formata uma data de acordo com as opções específicas.
+Ao usar Vue.use(datePlugin), o plugin é instalado globalmente em todas as instâncias Vue, permitindo o acesso ao método $formatDate em qualquer componente.
+No componente Vue, usamos o método $formatDate para formatar a data e exibi-la no template. Este é apenas um exemplo básico, e plugins podem ser muito mais poderosos, adicionando funcionalidades complexas em nível de aplicativo ao Vue.js.*/
+
+/*OBSERVADORES
+As propriedades computadas nos permitem calcular declarativamente valores derivados. No entanto, há casos em que precisamos realizar “efeitos colaterais” em reação a mudanças de estado – por exemplo, alterar o DOM ou alterar outra parte do estado com base no resultado de uma operação assíncrona.
+Com a API Composition, podemos usar a função watch para acionar um retorno de chamada sempre que uma parte do estado reativo muda.
+
+Certo, vou fornecer um exemplo básico de como usar a função watch na API Composition do Vue.js para realizar ações em resposta a mudanças de estado. Neste caso, vamos usar watch para observar uma propriedade reativa e executar uma ação sempre que ela mudar.*/
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Watch</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+</head>
+<body>
+
+<div id="app">
+  <p>{{ message }}</p>
+  <input v-model="inputValue" placeholder="Digite algo">
+</div>
+
+<script>
+const app = Vue.createApp({
+  data() {
+    return {
+      message: 'Mensagem inicial',
+      inputValue: ''
+    };
+  },
+  watch: {
+    inputValue(newValue, oldValue) {
+      // Este bloco será executado sempre que 'inputValue' mudar
+      console.log(`Novo valor: ${newValue}, Valor anterior: ${oldValue}`);
+      this.message = `Você digitou: ${newValue}`;
+    }
+  }
+});
+
+app.mount('#app');
+</script>
+
+</body>
+</html>
+
+/*Neste exemplo:
+Utilizamos watch para observar a propriedade inputValue. Sempre que inputValue muda, a função de retorno de chamada dentro do bloco watch é executada.
+A função de retorno de chamada recebe dois argumentos, newValue (novo valor) e oldValue (valor anterior). Podemos usá-los para realizar ações com base nas mudanças.
+No exemplo, atualizamos a propriedade message com uma mensagem personalizada sempre que o valor de inputValue muda.
+A função watch é útil para realizar ações específicas em resposta a mudanças de estado, especialmente quando essas ações envolvem lógica mais complexa do que o que pode ser alcançado com propriedades computadas.*/
+
+/*Caça-níqueis
+Em alguns casos, podemos querer passar um fragmento de modelo para um componente filho e deixar o componente filho renderizar o fragmento dentro de seu próprio modelo. O <slot>elemento é uma saída de slot que indica onde o conteúdo do slot fornecido pelos pais deve ser renderizado.*/
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Slot</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+<body>
+
+<div id="app">
+  <slot-machine>
+    <img src="icon-cherry.png" alt="Cherry" slot="icon1">
+    <img src="icon-lemon.png" alt="Lemon" slot="icon2">
+    <img src="icon-seven.png" alt="Seven" slot="icon3">
+  </slot-machine>
+</div>
+
+<script>
+// Componente de caça-níqueis
+Vue.component('slot-machine', {
+  template: `
+    <div>
+      <h1>Caça-Níqueis</h1>
+      <div>
+        <slot name="icon1"></slot>
+        <slot name="icon2"></slot>
+        <slot name="icon3"></slot>
+      </div>
+      <button @click="spin">Girar</button>
+    </div>
+  `,
+  methods: {
+    spin() {
+      // Lógica para girar os ícones
+      alert('Girando os ícones!');
+    }
+  }
+});
+
+new Vue({
+  el: '#app'
+});
+</script>
+
+</body>
+</html>
+
+/*Neste exemplo:
+Criamos o componente slot-machine que possui três slots nomeados (icon1, icon2, icon3) onde os ícones fornecidos pelo componente pai serão renderizados.
+O componente pai fornece imagens para cada um dos slots usando as tags <img> com o atributo slot correspondente.
+O botão "Girar" no componente slot-machine é apenas um exemplo de um possível botão de ação que poderia iniciar uma animação de giro nos ícones.
+Essa abordagem permite uma maior flexibilidade ao criar componentes compostos, pois permite que o componente pai forneça conteúdo personalizado para slots específicos no componente filho.*/
+
+/**Transição**/
+/*Vue oferece dois componentes integrados que podem ajudar a trabalhar com transições e animações em resposta à mudança de estado:
+
+<Transition>para aplicar animações quando um elemento ou componente entra e sai do DOM. Isso é abordado nesta página.
+<TransitionGroup>para aplicar animações quando um elemento ou componente é inserido, removido ou movido dentro de uma v-forlista. Isso é abordado no próximo capítulo.*/
+/*Entendi. Vamos criar um exemplo simples utilizando o componente `<transition>` para aplicar animações quando um elemento entra e sai do DOM.*/
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Transition</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <style>
+    .fade-enter-active, .fade-leave-active {
+      transition: opacity 0.5s;
+    }
+    .fade-enter, .fade-leave-to {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div id="app">
+  <button @click="toggleElement">Toggle Element</button>
+  <transition name="fade">
+    <p v-if="showElement">Este é um elemento com transição.</p>
+  </transition>
+</div>
+
+<script>
+new Vue({
+  el: '#app',
+  data: {
+    showElement: false
+  },
+  methods: {
+    toggleElement() {
+      this.showElement = !this.showElement;
+    }
+  }
+});
+</script>
+
+</body>
+</html>
+
+/*Neste exemplo:
+1. Utilizamos o componente `<transition>` em torno do elemento `<p>` que queremos animar.
+2. Definimos estilos CSS para controlar a animação. No exemplo, usamos uma transição de opacidade (`opacity`) para criar um efeito de fade in e fade out.
+3. O botão "Toggle Element" alterna o estado da variável `showElement`, fazendo com que o parágrafo seja renderizado ou removido, acionando a animação definida na transição.
+Essa é uma maneira simples de usar o componente `<transition>` para aplicar animações a elementos que entram e saem do DOM em resposta a mudanças de estado.*/
+
+
+/*Grupo de Transição
+<TransitionGroup>é um componente integrado projetado para animar a inserção, remoção e alteração de ordem de elementos ou componentes renderizados em uma lista.*/
+/*Entendido. Vamos criar um exemplo simples utilizando o componente `<transition-group>` para animar a inserção e remoção de elementos em uma lista.*/
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Transition Group</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <style>
+    .list-enter-active, .list-leave-active {
+      transition: opacity 0.5s, transform 0.5s;
+    }
+    .list-enter, .list-leave-to {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+  </style>
+</head>
+<body>
+
+<div id="app">
+  <button @click="addItem">Adicionar Item</button>
+  <transition-group name="list" tag="ul">
+    <li v-for="(item, index) in items" :key="index">{{ item }}</li>
+  </transition-group>
+</div>
+
+<script>
+new Vue({
+  el: '#app',
+  data: {
+    items: ['Item 1', 'Item 2', 'Item 3']
+  },
+  methods: {
+    addItem() {
+      const newItem = `Novo Item ${this.items.length + 1}`;
+      this.items.push(newItem);
+    }
+  }
+});
+</script>
+
+</body>
+</html>
+
+/*Neste exemplo:
+1. Utilizamos o componente `<transition-group>` em torno da lista (`<ul>`).
+2. Definimos estilos CSS para controlar a animação. Neste exemplo, aplicamos uma transição de opacidade (`opacity`) e um efeito de deslizamento para cima (`transform: translateY`) para criar uma animação ao adicionar e remover itens da lista.
+3. O botão "Adicionar Item" adiciona um novo item à lista, acionando a animação definida no `<transition-group>`.
+Essa é uma maneira simples de usar o componente `<transition-group>` para animar a inserção e remoção de elementos em uma lista em resposta a mudanças de estado.*/
+
+
+/*Componentes assíncronos
+Em aplicativos grandes, talvez seja necessário dividir o aplicativo em partes menores e carregar um componente do servidor apenas quando necessário. Para tornar isso possível, o Vue possui uma defineAsyncComponentfunção.*/
+/*, a função `defineAsyncComponent` no Vue.js é útil para carregar componentes de forma assíncrona, o que pode ser útil em aplicativos maiores para dividir o código em partes menores. Vamos criar um exemplo simples usando `defineAsyncComponent` para carregar um componente de forma assíncrona.*/
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Async Component</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+</head>
+<body>
+
+<div id="app">
+  <button @click="loadAsyncComponent">Carregar Componente Assíncrono</button>
+  <async-component v-if="asyncComponent" />
+</div>
+
+<script>
+// Definindo um componente assíncrono
+const AsyncComponent = Vue.defineAsyncComponent(() =>
+  import('./AsyncComponent.vue') // Substitua pelo caminho real do seu componente assíncrono
+);
+
+new Vue({
+  el: '#app',
+  data: {
+    asyncComponent: null
+  },
+  methods: {
+    loadAsyncComponent() {
+      this.asyncComponent = AsyncComponent;
+    }
+  }
+});
+</script>
+
+</body>
+</html>
+
+
+/*No exemplo acima:
+1. Usamos `defineAsyncComponent` para criar um componente assíncrono. Dentro desta função, usamos `import` para carregar o componente de forma assíncrona.
+2. O botão "Carregar Componente Assíncrono" aciona a função `loadAsyncComponent`, que define `asyncComponent` como o componente assíncrono criado.
+3. O componente assíncrono é renderizado condicionalmente usando `v-if`.
+Certifique-se de substituir `'./AsyncComponent.vue'` pelo caminho real do seu componente assíncrono. Este exemplo simplificado demonstra como carregar componentes de forma assíncrona no Vue.js.*/
+
+
+
+
+/*Componentes de teletransporte*/
+/*Às vezes podemos nos deparar com o seguinte cenário: uma parte do template de um componente pertence logicamente a ele, mas do ponto de vista visual, deveria ser exibida em algum outro lugar no DOM, fora da aplicação Vue. É aqui que <Teleport>entra o componente.*/
+
+/*Sim, o componente `<Teleport>` no Vue.js é útil quando você precisa renderizar parte do conteúdo de um componente em um local diferente no DOM. Vamos criar um exemplo básico usando `<Teleport>`.*/
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Teleport</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+</head>
+<body>
+
+<div id="app">
+  <button @click="toggleModal">Abrir Modal</button>
+  <teleport to="body">
+    <modal v-if="showModal" />
+  </teleport>
+</div>
+
+<script>
+// Definindo o componente modal
+const Modal = {
+  template: `
+    <div class="modal">
+      <div class="modal-content">
+        <p>Conteúdo do Modal</p>
+        <button @click="$emit('close')">Fechar Modal</button>
+      </div>
+    </div>
+  `
+};
+
+new Vue({
+  el: '#app',
+  components: {
+    Modal,
+    Teleport: Vue.Teleport
+  },
+  data: {
+    showModal: false
+  },
+  methods: {
+    toggleModal() {
+      this.showModal = !this.showModal;
+    }
+  }
+});
+</script>
+
+<style>
+  .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ccc;
+    padding: 20px;
+    background: white;
+  }
+</style>
+
+</body>
+</html>
+
+/*No exemplo acima:
+1. Utilizamos o componente `<teleport>` para renderizar o componente `modal` fora do escopo do componente pai.
+2. O botão "Abrir Modal" aciona a função `toggleModal`, que alterna o estado da variável `showModal`.
+3. O componente `modal` é renderizado dentro do `<teleport to="body">`, fazendo com que o conteúdo do modal seja movido para o elemento `<body>` do DOM.
+4. O componente `modal` possui um botão para fechar o modal, que emite um evento para o componente pai.
+Esse é um exemplo básico de como usar o componente `<Teleport>` para renderizar conteúdo em um local diferente no DOM.*/
+
+
+/*Fornecer / Injetar*/
+/*Normalmente, quando precisamos passar dados do componente pai para um componente filho, usamos props. No entanto, imagine o caso em que temos uma grande árvore de componentes e um componente profundamente aninhado precisa de algo de um componente ancestral distante. Com apenas adereços, teríamos que passar o mesmo adereço por toda a cadeia pai. Podemos resolver a perfuração de adereços com providee inject.`provide` e `inject` são opções úteis quando você precisa passar dados para componentes descendentes sem passar explicitamente através de cada componente intermediário usando props.
+Aqui está um exemplo básico demonstrando como usar `provide` e `inject`:*/
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Provide/Inject</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+</head>
+<body>
+
+<div id="app">
+  <ancestor-component>
+    <intermediate-component>
+      <descendant-component />
+    </intermediate-component>
+  </ancestor-component>
+</div>
+
+<script>
+// Componente ancestral fornece dados
+const AncestorComponent = {
+  provide() {
+    return {
+      message: 'Dados do componente ancestral'
+    };
+  },
+  template: `
+    <div>
+      <slot></slot>
+    </div>
+  `
+};
+
+// Componente intermediário
+const IntermediateComponent = {
+  template: `
+    <div>
+      <slot></slot>
+    </div>
+  `
+};
+
+// Componente descendente injeta dados
+const DescendantComponent = {
+  inject: ['message'],
+  template: `
+    <div>
+      <p>{{ message }}</p>
+    </div>
+  `
+};
+
+new Vue({
+  el: '#app',
+  components: {
+    AncestorComponent,
+    IntermediateComponent,
+    DescendantComponent
+  }
+});
+</script>
+
+</body>
+</html>
+
+
+/*Neste exemplo:
+1. `AncestorComponent` fornece dados usando a opção `provide`.
+2. `IntermediateComponent` não fornece nem injeta dados. Ele apenas repassa os dados através do slot.
+3. `DescendantComponent` injeta dados usando a opção `inject`.
+Dessa forma, o `DescendantComponent` tem acesso aos dados fornecidos pelo `AncestorComponent` sem a necessidade de passar explicitamente através do `IntermediateComponent`. Isso pode ser útil em cenários em que a árvore de componentes é extensa e passar props seria impraticável.*/
+
+/*Referência
+ref()e reactive()são usados ​​para rastrear alterações em seu argumento. Ao usá-los para inicializar variáveis, você fornece informações ao Vue: “Ei, quero que você reconstrua ou reavalie tudo que depende dessas variáveis ​​toda vez que elas mudarem”.*/
+
+Sim, `ref()` e `reactive()` são funções no Vue.js que ajudam a rastrear e reagir a alterações em dados. Vamos criar um exemplo básico usando `ref()` e `reactive()`.
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Ref and Reactive</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+</head>
+<body>
+
+<div id="app">
+  <p>Nome: {{ userData.name }}</p>
+  <input v-model="userData.name" placeholder="Digite seu nome">
+  <p>Contador: {{ counter }}</p>
+  <button @click="incrementCounter">Incrementar</button>
+</div>
+
+<script>
+const { ref, reactive } = Vue;
+
+// Utilizando ref para variável reativa simples
+const counter = ref(0);
+
+// Utilizando reactive para objeto reativo
+const userData = reactive({
+  name: 'John Doe'
+});
+
+new Vue({
+  el: '#app',
+  setup() {
+    // Expondo as variáveis para o template
+    return { counter, userData };
+  },
+  methods: {
+    incrementCounter() {
+      // Alterando o valor da variável reativa
+      counter.value++;
+    }
+  }
+});
+</script>
+
+</body>
+</html>
+
+
+/*Neste exemplo:
+1. Usamos `ref()` para criar uma variável reativa chamada `counter` e `reactive()` para criar um objeto reativo chamado `userData`.
+2. No template, exibimos e vinculamos um input ao nome dentro do objeto `userData`. Isso significa que qualquer alteração no input refletirá automaticamente em `userData.name`.
+3. Também exibimos e incrementamos o `counter`, que é uma variável reativa.
+4. Ao clicar no botão "Incrementar", a função `incrementCounter` é chamada, alterando o valor da variável reativa `counter`, e a alteração é automaticamente refletida no template.
+Esses recursos são úteis para criar lógica reativa em seus componentes Vue.*/
+
+
+/*toRefs*/
+/*Na verdade, existe uma pequena confusão em sua afirmação. toRefs não converte um objeto reativo em um objeto simples, mas sim cria uma versão desestruturada do objeto reativo, mantendo a reatividade. Vamos criar um exemplo para ilustrar como toRefs funciona:*/
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue toRefs</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+</head>
+<body>
+
+<div id="app">
+  <p>Nome: {{ userData.name }}</p>
+  <input v-model="userData.name" placeholder="Digite seu nome">
+  <p>Contador: {{ counter }}</p>
+  <button @click="incrementCounter">Incrementar</button>
+</div>
+
+<script>
+const { ref, reactive, toRefs } = Vue;
+
+// Utilizando ref para variável reativa simples
+const counter = ref(0);
+
+// Utilizando reactive para objeto reativo
+const userData = reactive({
+  name: 'John Doe'
+});
+
+// Utilizando toRefs para criar uma versão desestruturada mantendo a reatividade
+const { name } = toRefs(userData);
+
+new Vue({
+  el: '#app',
+  setup() {
+    // Expondo as variáveis desestruturadas para o template
+    return { counter, userData, name };
+  },
+  methods: {
+    incrementCounter() {
+      // Alterando o valor da variável reativa
+      counter.value++;
+    }
+  }
+});
+</script>
+
+</body>
+</html>
+
+/*Neste exemplo:
+1. Utilizamos `toRefs` para criar uma versão desestruturada mantendo a reatividade do objeto `userData`. A referência `name` é criada usando `toRef(userData, 'name')`.
+2. No template, exibimos e vinculamos um input ao `name`, que é uma referência a `userData.name`. Isso significa que qualquer alteração no input refletirá automaticamente em `userData.name`.
+3. Também exibimos e incrementamos o `counter`, que é uma variável reativa.
+Essa é uma forma útil de desestruturar um objeto reativo mantendo a reatividade das propriedades individuais.*/
+
+/*reativo
+reactivenos permite criar estruturas de dados reativas. Objetos reativos são proxies JavaScript e se comportam como objetos normais. A diferença é que o Vue é capaz de rastrear o acesso à propriedade e as mutações de um objeto reativo.
+Sim, exatamente. O Vue.js utiliza objetos reativos para rastrear alterações em dados e automaticamente atualizar a interface do usuário quando esses dados mudam. Vamos criar um exemplo básico usando reactive() para ilustrar como funciona:*/
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Reactive</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+</head>
+<body>
+
+<div id="app">
+  <p>Nome: {{ userData.name }}</p>
+  <input v-model="userData.name" placeholder="Digite seu nome">
+  <p>Contador: {{ counter }}</p>
+  <button @click="incrementCounter">Incrementar</button>
+</div>
+
+<script>
+const { reactive, ref } = Vue;
+
+// Utilizando reactive para criar um objeto reativo
+const userData = reactive({
+  name: 'John Doe'
+});
+
+// Utilizando ref para criar uma variável reativa simples
+const counter = ref(0);
+
+new Vue({
+  el: '#app',
+  setup() {
+    // Expondo os dados reativos para o template
+    return { userData, counter };
+  },
+  methods: {
+    incrementCounter() {
+      // Alterando o valor da variável reativa
+      counter.value++;
+    }
+  }
+});
+</script>
+
+</body>
+</html>
+
+/*Sim, exatamente. O Vue.js utiliza objetos reativos para rastrear alterações em dados e automaticamente atualizar a interface do usuário quando esses dados mudam. Vamos criar um exemplo básico usando `reactive()` para ilustrar como funciona:*/
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Reactive</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+</head>
+<body>
+
+<div id="app">
+  <p>Nome: {{ userData.name }}</p>
+  <input v-model="userData.name" placeholder="Digite seu nome">
+  <p>Contador: {{ counter }}</p>
+  <button @click="incrementCounter">Incrementar</button>
+</div>
+
+<script>
+const { reactive, ref } = Vue;
+
+// Utilizando reactive para criar um objeto reativo
+const userData = reactive({
+  name: 'John Doe'
+});
+
+// Utilizando ref para criar uma variável reativa simples
+const counter = ref(0);
+
+new Vue({
+  el: '#app',
+  setup() {
+    // Expondo os dados reativos para o template
+    return { userData, counter };
+  },
+  methods: {
+    incrementCounter() {
+      // Alterando o valor da variável reativa
+      counter.value++;
+    }
+  }
+});
+</script>
+
+</body>
+</html>
+
+/*Neste exemplo:
+
+1. Usamos `reactive()` para criar um objeto reativo chamado `userData`. O Vue automaticamente rastreia as alterações nesta estrutura de dados.
+2. Usamos `ref()` para criar uma variável reativa simples chamada `counter`.
+3. No template, exibimos e vinculamos um input ao `userData.name`. Isso significa que qualquer alteração no input refletirá automaticamente em `userData.name`.
+4. Também exibimos e incrementamos o `counter`, que é uma variável reativa.
+Essa abordagem reativa é fundamental para o Vue.js, pois permite que a biblioteca rastreie automaticamente as dependências e atualize a interface do usuário quando os dados mudam.*/
+
+
+/*computado
+computedpega uma função getter e retorna um refobjeto reativo somente leitura para o valor retornado do getter. Ele também pode usar um objeto com funções gete setpara criar um objeto ref gravável.
+Sim, você está correto. No Vue.js, a propriedade `computed` é usada para criar dados derivados que são dependentes de outros dados reativos. Vamos criar um exemplo para ilustrar como `computed` funciona:*/
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Computed</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+</head>
+<body>
+
+<div id="app">
+  <p>Nome: {{ userData.name }}</p>
+  <p>Idade: {{ userData.age }}</p>
+  <p>Ano de Nascimento: {{ birthYear }}</p>
+  <input v-model="userData.age" placeholder="Digite sua idade">
+</div>
+
+<script>
+const { reactive, computed } = Vue;
+
+// Utilizando reactive para criar um objeto reativo
+const userData = reactive({
+  name: 'John Doe',
+  age: 25
+});
+
+// Utilizando computed para calcular o ano de nascimento
+const birthYear = computed(() => new Date().getFullYear() - userData.age);
+
+new Vue({
+  el: '#app',
+  setup() {
+    // Expondo os dados reativos e computed para o template
+    return { userData, birthYear };
+  }
+});
+</script>
+
+</body>
+</html>
+
+/*Neste exemplo:
+1. Usamos `reactive()` para criar um objeto reativo chamado `userData`, contendo propriedades como `name` e `age`.
+2. Usamos `computed()` para criar uma propriedade computada chamada `birthYear`. Esta propriedade é derivada do valor de `userData.age` e é automaticamente atualizada sempre que `userData.age` muda.
+3. No template, exibimos o nome, a idade e o ano de nascimento. O ano de nascimento é calculado automaticamente através da propriedade computada `birthYear`.
+A propriedade `computed` é útil para derivar valores com base em dados reativos, mantendo a reatividade e atualizando automaticamente quando os dados subjacentes são alterados.*/
+
+/*wATCH**/
+/*Sim, você está correto. A opção `watch` no Vue.js é usada para observar mudanças em propriedades reativas e realizar ações específicas quando essas mudanças ocorrem. Aqui está um exemplo básico para ilustrar como `watch` funciona:*/
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Watch</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+</head>
+<body>
+
+<div id="app">
+  <p>Contador: {{ counter }}</p>
+  <button @click="incrementCounter">Incrementar</button>
+</div>
+
+<script>
+const { reactive, watch } = Vue;
+
+// Utilizando reactive para criar um objeto reativo
+const userData = reactive({
+  name: 'John Doe'
+});
+
+new Vue({
+  el: '#app',
+  data() {
+    return {
+      counter: 0
+    };
+  },
+  watch: {
+    counter(newValue, oldValue) {
+      console.log(`Contador mudou de ${oldValue} para ${newValue}`);
+    }
+  },
+  methods: {
+    incrementCounter() {
+      // Alterando o valor da variável reativa
+      this.counter++;
+    }
+  }
+});
+</script>
+
+</body>
+</html>
+
+/*Neste exemplo:
+
+1. Usamos `reactive()` para criar um objeto reativo chamado `userData`.
+2. Utilizamos `watch` para observar mudanças na propriedade `counter`. A função de retorno de chamada dentro de `watch` será chamada sempre que `counter` mudar.
+3. Exibimos o valor de `counter` no template e incrementamos `counter` ao clicar no botão "Incrementar".
+4. No console do navegador, você verá mensagens sempre que o valor de `counter` mudar.
+Essa é uma maneira de reagir a alterações em propriedades reativas usando `watch` no Vue.js.*/
+
+/*NextTick
+Sim, você está correto. O `nextTick` é uma função de utilidade no Vue.js que permite agendar uma ação para ser executada na próxima atualização do DOM. Isso é útil quando você precisa garantir que as alterações feitas em seu componente tenham sido refletidas no DOM antes de executar outra lógica.
+Vamos criar um exemplo simples para ilustrar como `nextTick` funciona:*/
+
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue NextTick</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
+</head>
+<body>
+
+<div id="app">
+  <p>{{ message }}</p>
+  <button @click="changeMessage">Alterar Mensagem</button>
+</div>
+
+<script>
+const { ref, nextTick } = Vue;
+
+new Vue({
+  el: '#app',
+  setup() {
+    const message = ref('Mensagem Inicial');
+
+    const changeMessage = () => {
+      message.value = 'Nova Mensagem';
+
+      // Usando nextTick para agendar uma ação após a próxima atualização do DOM
+      nextTick(() => {
+        console.log('DOM Atualizado!');
+        // Lógica a ser executada após a próxima atualização do DOM
+      });
+    };
+
+    return { message, changeMessage };
+  }
+});
+</script>
+
+</body>
+</html>
+
+/*Neste exemplo:
+1. Usamos `ref` para criar uma variável reativa chamada `message`.
+2. Ao clicar no botão "Alterar Mensagem", chamamos a função `changeMessage` que altera o valor de `message` e, em seguida, usa `nextTick` para agendar uma ação que será executada após a próxima atualização do DOM.
+3. No console do navegador, você verá a mensagem "DOM Atualizado!" após a alteração da mensagem.
+Essa é uma maneira útil de lidar com operações após a próxima atualização do DOM no Vue.js.*/
+
+
+/*Composables*/
+/*No Vue.js, um "combinável" é uma função que utiliza a API de composição para encapsular e reutilizar lógica com estado em seus componentes. Isso é particularmente útil para abstrair lógicas comuns e manter a modularidade e reusabilidade do código.
+Vamos criar um exemplo básico para ilustrar como um combinável pode ser usado:*/
+
+// Definindo um combinável para formatação de data
+const useDateFormatter = () => {
+  const formatDate = (date) => {
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return new Intl.DateTimeFormat('en-US', options).format(date);
+  };
+
+  return { formatDate };
+};
+
+// Componente utilizando o combinável
+Vue.createApp({
+  data() {
+    return {
+      currentDate: new Date()
+    };
+  },
+  setup() {
+    const { formatDate } = useDateFormatter();
+
+    return { formatDate };
+  },
+  template: `
+    <div>
+      <p>Data Atual: {{ formatDate(currentDate) }}</p>
+    </div>
+  `
+}).mount('#app');
+
+/*Neste exemplo:
+Criamos um combinável chamado useDateFormatter que encapsula a lógica de formatação de data.
+No componente Vue, usamos setup() para acessar a função formatDate do combinável.
+No template, exibimos a data formatada usando a função formatDate.
+Isso ilustra como um combinável pode ser usado para encapsular lógicas específicas, proporcionando uma abstração limpa e reutilizável para tarefas comuns em vários componentes.*/
 
 /*Ecosystem*/
 
