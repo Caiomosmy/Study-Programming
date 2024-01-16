@@ -2,7 +2,7 @@
 
 - Nome: Caio Henrique Pereira Dos Santos
 - Idade: 20 Anos
-- Experiência : 2y
+- Experiência : 2 Anos
 - Objetivo Profissional : Desenvolvedor Full Stack Sênior 
 
 Aqui fica de maneira crua meus conhecimentos, e o que eu estudei e como aplico e aonde aplico. 
