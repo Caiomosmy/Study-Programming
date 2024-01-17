@@ -38,12 +38,15 @@ OBJETIVO PROFISSIONAIS 2023-24
 ## Stacks Front-end
 - ✅ JavaScript
 - ✅ Vues.JS
-- 🎯 Nuxt.Js
+- ✅ HTML
+- ✅ CSS
+- 🎯 TAILWILD CSS 
 
 ## Frameworks
 - ✅ Django
 - ✅ NodeJS
 - ✅ Express.JS
+- ✅ Neux.js
 
 ## APIs
 - ✅ Restful
