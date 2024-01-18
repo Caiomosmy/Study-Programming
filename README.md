@@ -14,15 +14,13 @@ pois quero expandir minhas influências e Networking me tornando uma autoridade 
 OBJETIVO PROFISSIONAIS 2023-24
 1. 🎯- SaaS - Mind Kimera - Marketing | Lançado do Mercado
 2. 🎯- SaaS - Leviatã Lançado - Marketing | Lançado no Mercado
-3. 🎯- SaaS - Omni Market - Varejo | Lançado no Mercado 
-4. 🎯- SaaS - Tooth White - Ondotologia | Lançado no Mercado
-5. 🎯- Saas - Scrapfy - Raspagem de dados | Lançado no Mercado
-6. 🎯- English C1 (Avançado)
-7. 🎯- 00/50 Projetos desenvolvidos 
-8. 🎯- 000/100 Artigos escrito originalmente (Medium)
-9. 🎯- Conexões no LinkedIn
-10. 🎯- Conexões no GitHub
-11. 🎯- 00/20 Livros no ano lidos 
+3. 🎯- Saas - Scrapfy - Raspagem de dados | Lançado no Mercado
+4. 🎯- English C1 (Avançado)
+5. 🎯- 00/50 Projetos desenvolvidos 
+6. 🎯- 000/100 Artigos escrito originalmente (Medium)
+7. 🎯- Conexões no LinkedIn
+8. 🎯- Conexões no GitHub
+9. 🎯- 00/20 Livros no ano lidos 
 
 ## Melhorias Adicionais
 - ✅ Arquitetura e Design de Software
