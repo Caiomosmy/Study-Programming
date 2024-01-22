@@ -1,4 +1,4 @@
-Configurações Iniciais do Projeto Django:
+/#Configurações Iniciais do Projeto Django:
 Ao criar um novo projeto Django, você precisa fazer algumas configurações iniciais.
 
 1. **Criar um Ambiente Virtual (Opcional, mas recomendado):** É uma boa prática criar um ambiente virtual para isolar as dependências do seu projeto Django do sistema operacional. Você pode usar a ferramenta `virtualenv` para criar um ambiente virtual.
