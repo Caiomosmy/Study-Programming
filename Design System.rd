@@ -1,3 +1,0 @@
-#TERMINOLOGIA
-
-##Conponentes
