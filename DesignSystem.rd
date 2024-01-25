@@ -47,7 +47,21 @@ Fractal
 Storybook
 */
 
-##Conponentes
+#--Linguagem de design
+Uma linguagem de design ou vocabulário de design é um esquema ou estilo abrangente que orienta o design de um complemento de produtos ou configurações arquitetônicas, criando um sistema de design coerente para o estilo.
+
+#--Governaça
+
+#--Diretrizes
+
+#--Padrão
+
+#--Piloto
+
+#--Símbolo
+
+#--Kit de Interface do Usuário
+
 
 #CRIANDO UM SISTEMA DE DESIGN
 
