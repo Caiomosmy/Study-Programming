@@ -23,7 +23,7 @@ OBJETIVO PROFISSIONAIS 2023-24
 
 ## Melhorias Adicionais
 - ✅ Arquitetura e Design de Software
-- ✅ System Design /*(Design de Sistema)*/
+- 🎯 System Design /*(Design de Sistema)*/
 - ✅ Design System /*(Sistema de Design)*/
 
 ## Stacks Back-end
@@ -35,6 +35,8 @@ OBJETIVO PROFISSIONAIS 2023-24
 ## Stacks Front-end
 - ✅ JavaScript
 - ✅ Vues.JS
+- 🎯 Nuxt.js
+- 🎯 Figma
 - ✅ HTML
 - ✅ CSS
 - 🎯 TAILWILD CSS 
@@ -57,5 +59,6 @@ OBJETIVO PROFISSIONAIS 2023-24
 - ✅ Git
 - ✅ AWS 
 - 🎯 Docker
+- 🎯 Kubenetes
 
 ### NOTAS MENSAIS SOBRE O PROGRESSO
