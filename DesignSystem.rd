@@ -51,17 +51,22 @@ Storybook
 Uma linguagem de design ou vocabulário de design é um esquema ou estilo abrangente que orienta o design de um complemento de produtos ou configurações arquitetônicas, criando um sistema de design coerente para o estilo.
 
 #--Governaça
+/*Governança é uma estrutura para esclarecer papéis, responsabilidades e autoridade sobre as decisões. Ter essa clareza garante que as decisões para o sistema de design se canalizem suavemente através do processo de governança*/
 
 #--Diretrizes
+/*Diretrizes de design são conjuntos de recomendações sobre como aplicar princípios de design para fornecer uma experiência positiva ao usuário. Os designers usam essas diretrizes para julgar como adotar princípios como intuição, capacidade de aprendizado, eficiência e consistência, para que possam criar designs atraentes e atender e exceder as necessidades do usuário.*/
 
 #--Padrão
+/*Os padrões são soluções de design de melhores práticas para tarefas específicas focadas no usuário e tipos de página. Os padrões geralmente usam um ou mais componentes e explicam como adaptá-los ao contexto. Alguns padrões de amostra podem ser o login do usuário no aplicativo ou a execução da operação de checkout.*/
 
 #--Piloto
+/*Os pilotos são uma das melhores maneiras de colocar seu sistema de design em seus ritmos, especialmente antes que o sistema de design chegue a um v1. Como pilotos de televisão ajudam a testar as reações do público a um conceito de série sem investir recursos significativos para criar a coisa toda, os pilotos de aplicativos são uma boa base para garantir que o design e o código do seu sistema de design sejam testados em batalha.*/
 
 #--Símbolo
+/*Os tokens do sistema de design são os valores de estilo dos elementos da UI, como cor, tipografia, espaçamento, sombras, etc., que são usados em todos os produtos e capazes de serem convertidos em um formato para qualquer plataforma (web, móvel, desktop). Tokens são blocos de construção do sistema de design—pense neles como subátomos, as menores peças de valores de estilo que permitem aos designers criar estilos para um produto.*/
 
 #--Kit de Interface do Usuário
-
+/*No que se refere a um sistema de design, um UI Kit é uma representação de componentes codificados criados de uma maneira que os designers que conhecem o código podem criar maquetes de interface. Exemplos de kits de UI são bibliotecas do Sketch e Sistemas de design Figma.*/
 
 #CRIANDO UM SISTEMA DE DESIGN
 
