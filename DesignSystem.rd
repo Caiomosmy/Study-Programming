@@ -370,4 +370,7 @@ Os componentes são os principais blocos de construção para interfaces de usu�
 
 #7 Tooling
 
+#--Design
+#--Componentes 
+
 #8 Project Manager
