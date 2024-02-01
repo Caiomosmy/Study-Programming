@@ -369,6 +369,37 @@ Os componentes são os principais blocos de construção para interfaces de usu�
 
 
 #7 Tooling
+Para tornar as coisas eficientes para qualquer pessoa que use seu sistema de design, torne o ferramental essencial. Encontre os fluxos de trabalho onde você pode integrar as coisas com as ferramentas que as pessoas usam. Isso ajuda a espalhar organicamente seu sistema de design e torná-lo crucial para o trabalho diário das pessoas.
+
+    ##--Design
+    A UI e a UX em um sistema de design precisam estar ligadas ao desenvolvimento o máximo possível. As ferramentas nesta lista de verificação devem ajudar os designers e desenvolvedores a trabalhar melhor juntos.
+
+    ###--- Design Editor
+    Existem muitos editores de design disponíveis no mercado hoje, com os nomes mais populares sendo Sketch, Figma e Adobe XD. Se você não tiver certeza de qual rota seguir, muitas vezes é melhor falar com sua equipe.
+
+    ###--- Plugins
+    Os Editores de Design mais populares (Sketch e Figma, especialmente) vêm com suporte a plug-ins de terceiros. Embora seja melhor usar as ferramentas embutidas dos editores para colocar seus componentes, os plugins podem trazer uma variedade de dados úteis para preenchê-los.
+
+    ###--- Version Control
+    Ter seu design versionado com versionamento semântico permitirá que você alinhe facilmente o design com o desenvolvimento, reverta as alterações defeituosas e libere as alterações no código e no design ao mesmo tempo.
+
+    ###--- Contribution Guidelines
+    Defina o processo de contribuição para a UI e UX do sistema de design e documente-o em um local detectável para facilitar a contribuição de todos.
+
+
+    ##-- Development
+
+    ###--- Component Catolog
+    ###--- Documentation
+    ###--- Code Style
+    ###--- Unit Testing
+    ###--- Accessibility Testing
+    ###--- Semantic Strategy
+    ###--- Release Strategy
+    ###--- Commit Guidelines
+    ###--- PR Templates
+    ###--- Contribuition Guidelines
+
 
 #--Design
 #--Componentes 
