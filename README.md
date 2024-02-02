@@ -12,8 +12,6 @@ pois quero expandir minhas influências e Networking me tornando uma autoridade 
 área de tecnologia.
 
 OBJETIVO PROFISSIONAIS 2023-24
-1. 🎯- SaaS - Mind Kimera - Marketing | Lançado do Mercado
-2. 🎯- SaaS - Leviatã Lançado - Marketing | Lançado no Mercado
 4. 🎯- English C1 (Avançado)
 5. 🎯- 00/50 Projetos desenvolvidos 
 6. 🎯- 000/100 Artigos escrito originalmente (Medium)
@@ -23,7 +21,7 @@ OBJETIVO PROFISSIONAIS 2023-24
 
 ## Melhorias Adicionais
 - ✅ Arquitetura e Design de Software
-- 🎯 System Design /*(Design de Sistema)*/
+- ✅ System Design /*(Design de Sistema)*/
 - ✅ Design System /*(Sistema de Design)*/
 
 ## Stacks Back-end
@@ -35,11 +33,9 @@ OBJETIVO PROFISSIONAIS 2023-24
 ## Stacks Front-end
 - ✅ JavaScript
 - ✅ Vues.JS
-- 🎯 Nuxt.js
 - 🎯 Figma
 - ✅ HTML
 - ✅ CSS
-- 🎯 TAILWILD CSS 
 
 ## Frameworks
 - ✅ Django
