@@ -492,8 +492,53 @@ Para tornar as coisas eficientes para qualquer pessoa que use seu sistema de des
     ###--- Contribuition Guidelines
     Definir o processo de contribuição para o código do sistema de design. Documente tudo em um lugar detectável para facilitar a contribuição de todos.
 
-
-#--Design
-#--Componentes 
-
 #8 Project Manager
+Os sistemas de design não são diferentes de qualquer outro projeto que sua equipe possa assumir. Para construir e manter com sucesso um, você precisa de uma estratégia clara que seja bem executada diariamente, e você precisará criar oportunidades para seus colegas darem feedback para ajudar a compartilhar seu sistema de design juntos.
+
+    ##--Communications
+    Seus usuários desempenham um grande papel na formação do seu sistema de design. Criar canais de comunicação onde eles possam levantar suas vozes ajuda você a acompanhar como eles usam seu sistema. O Itilitll também melhora seu senso de propriedade e a adoção do seu sistema.
+
+      ###---Community Meetings
+      Organize reuniões da comunidade com todos que usam o sistema de design. Compartilhe seu conhecimento e faça propostas para melhorar o senso de comunidade.
+
+      ###---Communication Channel
+      A maior parte do trabalho de desenvolvimento de produtos acontece digitalmente, então crie um canal digital onde as pessoas possam entrar em contato e fazer perguntas.
+
+      ###---Open Hours
+      Crie horários abertos nos quais você pode envolver seu público em um ambiente mais privado, onde você pode discutir as coisas com mais detalhes. Você também pode usá-los como codificação por pares ou oportunidades de design por pares.
+
+      ###---FAQs
+      Para economizar tempo para todos, defina quais perguntas são feitas com frequência pelo seu público e documente-as em um local detectável.
+
+    
+    ##--Task Management
+    O gerenciamento de tarefas e os fluxos de trabalho sólidos são uma etapa crucial na execução de qualquer projeto. Adotar uma metodologia como Agile ou Kanban ajuda a cobrir muito terreno.
+
+      ###---Readmap
+      Definir sua visão de curto e longo prazo e mapear as coisas ajuda você a decidir as etapas a serem tomadas, entender seu lugar no quadro geral e priorizar as tarefas do dia-a-dia.
+
+      ###---Milestones
+      Defina marcos que atuem como épicos maiores em seu gerenciamento de projetos com a ajuda de seu roteiro. Isso ajudará você a entender seu progresso.
+
+      ###---Ticketing
+      Facilite o acompanhamento do seu progresso diário usando software de emissão de bilhetes como Jira, Trello ou GitHub. Thisilitll torna mais fácil para os outros enviarem propostas de recursos ou relatórios de bugs.
+
+
+          
+    ##--Analytics
+    Os dados são o único fator determinante quando se trata do desenvolvimento de sistemas de design. Manter um olho afiado em como seu systemilitus usado no processo de desenvolvimento e no produto final pode informar sua estratégia de avanço.
+
+      ###---Component Analytics
+      Acompanhe o uso de seus componentes. Para o desenvolvimento, você pode usar ferramentas internas como o Figma’s Design System Analytics. Para o produto final, você pode ter uma maneira separada de rastreamento por plataforma, dependendo da tecnologia.
+
+      ###---Error Logging
+      Implemente uma maneira de rastrear e identificar interrupções relacionadas a componentes em seu produto.
+
+      ###---Tooling Analytics
+      Acompanhe quais ferramentas estão sendo usadas para o seu sistema de design. Descubra quais são os mais usados e quais recursos são os mais populares.
+
+      ###---Service and Health Metrics
+      Defina métricas de serviço e saúde para o seu sistema de design para definir uma referência sobre o quão bem você está indo. Exemplos comuns podem ser o número de tickets fechados, melhorias feitas ou bugs corrigidos.
+
+
+
