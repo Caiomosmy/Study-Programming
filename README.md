@@ -12,12 +12,12 @@ pois quero expandir minhas influências e Networking me tornando uma autoridade 
 área de tecnologia.
 
 OBJETIVO PROFISSIONAIS 2023-24
-4. 🎯- English C1 (Avançado)
-5. 🎯- 00/50 Projetos desenvolvidos 
-6. 🎯- 000/100 Artigos escrito originalmente (Medium)
-7. 🎯- 0.001/3.000 Conexões no LinkedIn
-8. 🎯- 000/500 Conexões no GitHub
-9. 🎯- 00/20 Livros no ano lidos 
+1. 🎯- English C1 (Avançado)
+2. 🎯- 00/50 Projetos desenvolvidos 
+3. 🎯- 000/100 Artigos escrito originalmente (Medium)
+4. 🎯- 0.001/3.000 Conexões no LinkedIn
+5. 🎯- 000/500 Conexões no GitHub
+6. 🎯- 00/20 Livros no ano lidos 
 
 ## Melhorias Adicionais
 - ✅ Arquitetura e Design de Software
