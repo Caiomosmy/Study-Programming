@@ -163,14 +163,86 @@ Como qualquer linguagem, uma linguagem de design é uma maneira metódica de se 
     Toda experiência consistente precisa de escrita estanque. Estabelecer as bases para o seu estilo de casa cedo mantém tudo alinhado com a gramática consistente, escolhas de estilo e linguagem orientada para a ação para ajudar seu design.
 
 #5 Defining Deisgn Tokens
+Variáveis que armazenam valores para a camada base do seu sistema de design, como cor e tipografia. Eles são usados em componentes, então as mudanças nesse nível ressoarão em todo o sistema.
 
-#-Color
+    ##--Color
+    Não apenas uma maneira eficiente de mostrar sua marca, mas também uma maneira eficiente de se comunicar com seus usuários. As paletas de cores criadas com propósito em mente em relação à estética podem ajudá-lo a criar padrões de design intuitivos, adicionando significado à sua interface.
 
-#-Layout 
+      ###---Guidelines
+      Forneça orientações sobre como e quando usar as cores em sua paleta, o que ter em mente ao trabalhar com elas e como não usá-las.
 
-#-Iconography
+      ###---Dark Mode
+      Preparar uma versão em modo escuro da sua paleta de cores permitirá que o seu sistema de design se adapte ao modo escuro e respeite o que o usuário quer ver.
 
-#-Typography
+      ###---Functiona Colors
+      Além das cores da sua marca, verifique se as cores foram definidas e transformadas em variáveis para funções como estados com deficiência, planos de fundo, ações e texto de alto contraste.
+
+      ###---Accessibility
+      Certifique-se de ter emparelhamentos acessíveis entre as cores principais em sua paleta. Mais importante ainda, certifique-se de que as cores de fundo e texto tenham pelo menos uma relação de contraste padrão AA entre elas.
+
+      ##--Layout
+      Um layout bem pensado vai um longo caminho. O uso consistente de uma grade e espaçamento torna mais fácil para seus usuários digitalizar a interface do usuário e compreender o conteúdo.
+
+      ###---Spacing
+      O ritmo horizontal e vertical desempenha um grande papel em um layout. Você deve fornecer métodos fáceis para adicionar espaço entre elementos de interface independentes da sua grade.
+
+      ###---Breakpoints
+      Predefina os tamanhos e orientações da tela às quais sua grade se adaptará.
+
+      ###---Grid
+      Cada layout deve estar em uma grade que traz ordem e hierarquia para a interface. Defina uma grade separadamente para dispositivos móveis, tablets e desktops com colunas, calhas e margens para que sua interface possa se adaptar facilmente a qualquer plataforma.
+
+      ###---Units
+      As unidades são os blocos de construção mais granulares para o layout. Definindo um conjunto de valores com incrementos consistentes (como 4, 8, etc, 12 E 16 para um sistema de 4 pontos) fornecerão a base quando você estiver projetando seus valores de grade e espaçamento.
+      
+    
+    ##--Iconography
+    Ícones são símbolos que representam funcionalidade ou conteúdo. Eles são especialmente reconhecíveis e úteis em interfaces de usuário, pois seu significado pode ser entendido de relance, todo o seu potencial pode ser realizado quando eles são usados de forma significativa e consistente.
+
+      ###---Accessibil ity
+      Para ícones que transmitem um significado ou servem uma função, adicione o suporte necessário para leitores de tela. Você pode pular isso para ícones decorativos.
+
+      ###---Style
+      Certifique-se de que sua família de ícones faça sentido visual como um todo. Escolher um estilo delineado ou preenchido e aderir a ele levará a uma melhor consistência visual e previsibilidade.
+
+      ###---naming
+      Nomeie seus ícones com base no que eles são, não no que eles representam. Por exemplo, um ícone de lixo deve ser chamado de lixo, não excluído. Você ainda pode adicionar palavras-chave relacionadas para melhorar a capacidade de descoberta.
+
+      ###---Grid Relation
+      Desenhe seus ícones em uma caixa delimitadora que jogue bem com sua grade. Isso contribui para um melhor emparelhamento com outros elementos da UI. Um bom exemplo disso seria ícones com caixas delimitadoras emparelhadas com texto.
+
+      ###---Sizes
+      Forneça tamanhos diferentes para ícones que se correlacionam com sua grade. Forneça um tamanho mínimo e remova detalhes desnecessários para seus ícones para tamanhos menores.
+
+      ###---Keywords
+      Adicionar palavras-chave irá melhorar a capacidade de descoberta de cada ícone e fornecer uma melhor experiência de usuário para quem usa seu sistema.
+
+      ###---Reserved Icons
+      Reservar ícones que representam ações comuns impedirá seu uso em qualquer outro contexto. Os ícones do sistema para navegação ou adição e exclusão são um bom exemplo. Isso leva a uma experiência de usuário mais intuitiva.
+
+      ###---Guidelines
+      Forneça diretrizes sobre como e quando usar ícones, o que ter em mente ao trabalhar com eles e como não usá-los.
+
+    ##--Typography
+    A tipografia é uma das principais maneiras de exibir o conteúdo dos produtos. Uma hierarquia clara e estilos contrastantes em sua escala de tipografia tornarão as coisas mais fáceis de ler e ajudarão na estrutura geral do seu produto. A It“ também é uma oportunidade para visualizar o caráter e a presença da sua marca.
+
+      ###---Responsiveness
+      Os dispositivos desktop geralmente podem ter tamanhos de fonte maiores em comparação com os dispositivos móveis. Criar uma escala de tipografia que se adapte ao tamanho da janela de visualização ajudará com uma hierarquia e layout mais significativos.
+
+      ###---Grid Relation
+      Os tamanhos de fonte e a liderança devem corresponder à sua grade para permitir um melhor emparelhamento entre texto e outros elementos da UI. Um bom exemplo disso é o texto emparelhado com ícones com caixas delimitadoras.
+
+      ###---Readability
+      Otimizar o espaçamento entre letras (rastreamento), a altura da linha (líder) e o comprimento da linha para sua escala de tipografia ajudará na legibilidade do texto.
+
+      ###---Performance
+      Fontes personalizadas precisam ser baixadas antes que possam ser exibidas, especialmente na web. Certifique-se de que você tem fallbacks sensatos e tempo de carregamento rápido para seus ativos de tipografia. O uso de fontes do sistema resolve esse problema de desempenho.
+
+      ###---Guidelines
+      Forneça diretrizes sobre como e quando usar os emparelhamentos em sua escala de tipografia, o que ter em mente ao trabalhar com eles e como não usá-los.
+
+
+
 
 #6 Creating Core Components
 Os componentes são os principais blocos de construção para interfaces de usuário. A criação de uma biblioteca de componentes reutilizáveis melhora o fluxo de trabalho de desenvolvimento de produtos, reduzindo a dívida de design e tecnologia e acelerando o processo. Os componentes principais podem ser divididos em pedaços granulares sem perder o significado.
