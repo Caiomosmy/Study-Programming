@@ -460,17 +460,37 @@ Para tornar as coisas eficientes para qualquer pessoa que use seu sistema de des
 
 
     ##-- Development
-      
+    Um dos principais desafios no desenvolvimento de um sistema de design é a construção dos componentes. Fazendo seu código estável, fácil de ler e contribuir para.
+
     ###--- Component Catolog
+    Isole seu ambiente de UI components’ fora da sua base de código do produto para garantir que eles não dependam de dependências globais e possam ser facilmente reutilizados.
+
     ###--- Documentation
+    Ter seu código documentado é fundamental para impulsionar a adoção e reduzir a carga sobre os colaboradores.
+
     ###--- Code Style
+    Ter um estilo de código definido ajuda a alinhar a maneira como os code-lipes são escritos no sistema e aumenta a velocidade de desenvolvimento. Deve ser automatizado com as ferramentas fornecidas para cada plataforma.
+
     ###--- Unit Testing
+    Cada parte do sistema de projeto deve ser coberta com testes unitários. Uma vez que o seu sistema seja adotado, qualquer alteração no ambiente isolado pode afetar o funcionamento do produto.
+
     ###--- Accessibility Testing
+    Os sistemas de design devem cobrir a acessibilidade o máximo possível. Fazer isso automaticamente reduz o risco de componentes inacessíveis ou fluxos de usuários no produto.
+
     ###--- Semantic Strategy
+    Versão do seu código com versionamento semântico que determina como os números de versão são atribuídos e incrementados.
+
     ###--- Release Strategy
+    As versões do sistema de design devem ser automatizadas e, idealmente, usar scripts executados localmente ou em pipelines de CI remotos para evitar liberações quebradas.
+
     ###--- Commit Guidelines
+    Automatize a geração do seu changelog adotando diretrizes de mensagem de confirmação que categorizam e definem as alterações que estão sendo feitas.
+
     ###--- PR Templates
+    Crie modelos de solicitação pull que descrevem a alteração proposta para facilitar discussões produtivas.
+
     ###--- Contribuition Guidelines
+    Definir o processo de contribuição para o código do sistema de design. Documente tudo em um lugar detectável para facilitar a contribuição de todos.
 
 
 #--Design
