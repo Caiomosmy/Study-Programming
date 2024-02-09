@@ -12,3 +12,6 @@
 
 
 /*EQUALITY COMPARISONS*/
+
+
+/*Asicrono*/
