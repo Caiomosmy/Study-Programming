@@ -19,4 +19,6 @@ Nuxt cuida disso e fornece funcionalidades de front-end e back-end para que voc�
 
 /*Renderização do lado do servidor*/
 
+/*View*/
+
 //
