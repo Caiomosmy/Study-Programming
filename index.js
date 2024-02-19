@@ -17,6 +17,17 @@ Existem funções para que possamos reutilizar o código. São blocos de código
 -- Building in Functions
 
 
+/*USING (THIS) KEYWORD*/
+- in a method
+- in a Function
+- usina it along
+- in event habdlers 
+- in Arrow Functions
+- Function Borrowing
+- explicit binding
+- call
+- Apple
+- bind
 /*DATA TYPES*/
 
 
