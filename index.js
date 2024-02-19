@@ -2,6 +2,19 @@
 
 
 /*FUNÇÕES*/
+Existem funções para que possamos reutilizar o código. São blocos de código que são executados sempre que são invocados. Cada função normalmente é escrita para executar uma tarefa específica, como uma função de adição usada para encontrar a soma de dois ou mais números. Quando números precisam ser adicionados em qualquer lugar do seu código, a função de adição pode ser invocada quantas vezes forem necessárias.
+
+- Function Parameters
+-- Default params
+-- Rest Params
+- Arrow Functions
+- IIFES
+- Arguments Object
+- Scope & Function Stack 
+-- Recursion
+-- Lexical
+-- Closures
+-- Building in Functions
 
 
 /*DATA TYPES*/
