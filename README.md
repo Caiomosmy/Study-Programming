@@ -11,7 +11,7 @@ Objetivos são grandes, mais deixarei uma base aqui para terem noção do que em
 pois quero expandir minhas influências e Networking me tornando uma autoridade (com mérito) na 
 área de tecnologia.
 
-OBJETIVO PROFISSIONAIS 2023-24
+OBJETIVO PROFISSIONAIS 2024
 1. 🎯- English C1 (Avançado)
 2. 🎯- 00/50 Projetos desenvolvidos 
 3. 🎯- 000/100 Artigos escrito originalmente (Medium)
@@ -26,8 +26,6 @@ OBJETIVO PROFISSIONAIS 2023-24
 
 ## Stacks Back-end
 - ✅ Python
-- ✅ PHP
-- ✅ R
 - ✅ TypeScript
 
 ## Stacks Front-end
@@ -58,3 +56,7 @@ OBJETIVO PROFISSIONAIS 2023-24
 - 🎯 Kubenetes
 
 ### NOTAS MENSAIS SOBRE O PROGRESSO
+
+Sobre Janeiro: Aprendi a Vues.js, System Design. Melhorando meu desenvolvimento front end. 
+
+sobre Fevereiro: Desenvolvi um método de prática pra me especializar em Python e Node.js já que são minhas principais Stacks aonde quero ser Especialista e autoridade na área. 
